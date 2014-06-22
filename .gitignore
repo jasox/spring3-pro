@@ -1,0 +1,64 @@
+#---------------------------------------
+#   ignoruj w projekcie 
+#---------------------------------------
+
+# podkatalogi katalogów
+
+.settings
+.svn
+target
+test-output
+tmp
+bak
+bin
+build
+dist
+
+*~
+.DS_Store
+.openshift
+
+#--------------------------------------
+# pliki konfiguracyjne
+
+#.gitignore
+#.springBeans
+.project
+.classpath
+manifest
+#/nb-configuration.xml
+#/nbactions.xml
+MANIFEST.MF
+.faces-config.xml.faceside
+.faces-config.xml.jsfdia
+
+# pliki w każdym katalogu
+
+*.doc#
+*.log
+*.log.*
+*.ldb
+*.bak
+
+#---------------------------------------
+# Compiled source #
+#
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+#
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+
