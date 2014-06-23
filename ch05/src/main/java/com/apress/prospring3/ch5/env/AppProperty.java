@@ -10,8 +10,8 @@ package com.apress.prospring3.ch5.env;
 public class AppProperty {
 
 	private String applicationHome;
-
 	private String userHome;
+	
 
 	public String getApplicationHome() {
 		return applicationHome;

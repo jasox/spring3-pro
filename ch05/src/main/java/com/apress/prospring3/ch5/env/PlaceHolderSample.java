@@ -20,7 +20,7 @@ public class PlaceHolderSample {
 		AppProperty appProperty = ctx.getBean("appProperty", AppProperty.class);
 		
 		System.out.println("application.home: " + appProperty.getApplicationHome());
-		System.out.println("user.home: " + appProperty.getUserHome());	
+		System.out.println("user.home: "        + appProperty.getUserHome());	
 	}
 
 }

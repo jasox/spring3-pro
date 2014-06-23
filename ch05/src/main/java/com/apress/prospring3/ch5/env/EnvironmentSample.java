@@ -24,7 +24,7 @@ public class EnvironmentSample {
 		
 		ConfigurableEnvironment env = ctx.getEnvironment();
 		MutablePropertySources propertySources = env.getPropertySources();
-		Map appMap = new HashMap();
+		Map<String, Object> appMap = new HashMap<String, Object>();
 		appMap.put("user.home", "/etc/prospring3/home");
 		propertySources.addFirst(new MapPropertySource("PROSPRING3_MAP", appMap));		
 		

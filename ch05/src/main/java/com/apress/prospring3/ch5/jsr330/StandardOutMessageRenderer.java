@@ -7,7 +7,6 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.inject.Singleton;
 
-
 /**
  * @author Clarence
  *
@@ -16,26 +15,25 @@ import javax.inject.Singleton;
 @Singleton
 public class StandardOutMessageRenderer implements MessageRenderer {
 
-	@Inject
-	@Named("messageProvider")
-    private MessageProvider messageProvider = null;
-	
-	public void render() {
-        if (messageProvider == null) {
-            throw new RuntimeException(
-                    "You must set the property messageProvider of class:"
-                            + StandardOutMessageRenderer.class.getName());
-        }
+  @Inject
+  @Named("messageProvider")
+  private MessageProvider messageProvider = null;
 
-        System.out.println(messageProvider.getMessage());	
-	}
+  public void render() {
+    if (messageProvider == null) {
+      throw new RuntimeException("You must set the property messageProvider of class:"
+          + StandardOutMessageRenderer.class.getName());
+    }
 
-	public void setMessageProvider(MessageProvider provider) {
-        this.messageProvider = provider;		
-	}
+    System.out.println(messageProvider.getMessage());
+  }
 
-	public MessageProvider getMessageProvider() {
-        return this.messageProvider;
-	}
-	
+  public void setMessageProvider(MessageProvider provider) {
+    this.messageProvider = provider;
+  }
+
+  public MessageProvider getMessageProvider() {
+    return this.messageProvider;
+  }
+
 }
