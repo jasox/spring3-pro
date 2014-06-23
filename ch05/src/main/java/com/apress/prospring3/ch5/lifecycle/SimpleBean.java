@@ -12,59 +12,64 @@ import org.springframework.context.support.GenericXmlApplicationContext;
  */
 public class SimpleBean {
 
-    private static final String DEFAULT_NAME = "Luke Skywalker";
+  private static final String DEFAULT_NAME = "Luke Skywalker";
+  
+  private String name = null;
+  private int    age  = Integer.MIN_VALUE;
+  
+  //----------------------------------------------------------------------------
+  
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    private String name = null;
+  public void setAge(int age) {
+    this.age = age;
+  }
+  
+  //----------------------------------------------------------------------------
 
-    private int age = Integer.MIN_VALUE;
+  public void init() {
+    System.out.println("Initializing bean");
 
-    public void setName(String name) {
-        this.name = name;
+    if (name == null) {
+      System.out.println("Using default name");
+      name = DEFAULT_NAME;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    if (age == Integer.MIN_VALUE) {
+      throw new IllegalArgumentException(
+          "You must set the age property of any beans of type " + SimpleBean.class);
     }
+  }
 
-    public void init() {
-        System.out.println("Initializing bean");
+  public String toString() {
+    return "Name: " + name + "\nAge: " + age;
+  }
+  
+  //----------------------------------------------------------------------------
 
-       if (name == null) {
-            System.out.println("Using default name");
-            name = DEFAULT_NAME;
-        }
+  public static void main(String[] args) {
 
-        if (age == Integer.MIN_VALUE) {
-            throw new IllegalArgumentException(
-                    "You must set the age property of any beans of type " + SimpleBean.class);
-        }
+    GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
+    ctx.load("classpath:lifecycle/initMethod.xml");
+    ctx.refresh(); // Refresh the ApplicationContext after XML config file loaded
+
+    SimpleBean simpleBean1 = getBean("simpleBean1", ctx);
+    SimpleBean simpleBean2 = getBean("simpleBean2", ctx);
+    SimpleBean simpleBean3 = getBean("simpleBean3", ctx);
+  }
+
+  private static SimpleBean getBean(String beanName, ApplicationContext ctx) {
+    try {
+      SimpleBean bean = (SimpleBean) ctx.getBean(beanName);
+      System.out.println(bean);
+      return bean;
     }
-
-    public String toString() {
-        return "Name: " + name + "\nAge: " + age;
+    catch (BeanCreationException ex) {
+      System.out.println("An error occured in bean configuration: " + ex.getMessage());
+      return null;
     }
-
-    public static void main(String[] args) {
-    	
-    	GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
-    	ctx.load("classpath:lifecycle/initMethod.xml");
-    	ctx.refresh();  // Refresh the ApplicationContext after XML config file loaded
-
-        SimpleBean simpleBean1 = getBean("simpleBean1", ctx);    
-        SimpleBean simpleBean2 = getBean("simpleBean2", ctx);
-        SimpleBean simpleBean3 = getBean("simpleBean3", ctx);
-    }
-
-    private static SimpleBean getBean(String beanName, ApplicationContext ctx) {
-        try {
-            SimpleBean bean =(SimpleBean) ctx.getBean(beanName);
-            System.out.println(bean);
-            return bean;
-        } catch (BeanCreationException ex) {
-            System.out.println("An error occured in bean configuration: "
-                    + ex.getMessage());
-            return null;
-        }
-    }
+  }
 
 }

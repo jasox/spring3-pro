@@ -13,15 +13,12 @@ import org.springframework.context.support.GenericApplicationContext;
  */
 public class ShutdownHookBean implements ApplicationContextAware {
 
-    private ApplicationContext ctx;
+  private ApplicationContext ctx;
 
-	public void setApplicationContext(ApplicationContext ctx)
-			throws BeansException {
-
-		if (ctx instanceof GenericApplicationContext) {
-			((GenericApplicationContext) ctx).registerShutdownHook();
-		}
-		
-	}
+  public void setApplicationContext(ApplicationContext ctx) throws BeansException {
+    if (ctx instanceof GenericApplicationContext) {
+      ((GenericApplicationContext) ctx).registerShutdownHook();
+    }
+  }
 
 }

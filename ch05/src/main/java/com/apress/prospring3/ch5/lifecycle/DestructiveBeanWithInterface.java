@@ -14,55 +14,47 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 /**
  * @author clarence
  */
-public class DestructiveBeanWithInterface implements InitializingBean,
-        DisposableBean {
+public class DestructiveBeanWithInterface implements InitializingBean, DisposableBean {
 
-    private InputStream is = null;
+  private InputStream is       = null;
+  public  String      filePath = null;
 
-    public String filePath = null;
-
-    public void afterPropertiesSet() throws Exception {
-
-        System.out.println("Initializing Bean");
-
-        if (filePath == null) {
-            throw new IllegalArgumentException(
-                    "You must specify the filePath property of " + DestructiveBean.class);
-        }
-
-        is = new FileInputStream(filePath);
+  public void afterPropertiesSet() throws Exception {
+    System.out.println("Initializing Bean");
+    if (filePath == null) {
+      throw new IllegalArgumentException("You must specify the filePath property of " + DestructiveBean.class);
     }
+    is = new FileInputStream(filePath);
+  }
 
-    public void destroy() {
-
-        System.out.println("Destroying Bean");
-
-        if (is != null) {
-            try {
-                is.close();
-                is = null;
-            } catch (IOException ex) {
-                System.err.println("WARN: An IOException occured"
-                        + " trying to close the InputStream");
-            }
-        }
+  public void destroy() {
+    System.out.println("Destroying Bean");
+    if (is != null) {
+      try {
+        is.close();
+        is = null;
+      }
+      catch (IOException ex) {
+        System.err.println("WARN: An IOException occured" + " trying to close the InputStream");
+      }
     }
+  }
 
-    public void setFilePath(String filePath) {
-        this.filePath = filePath;
-    }
+  public void setFilePath(String filePath) {
+    this.filePath = filePath;
+  }
 
-    public static void main(String[] args) throws Exception {
-    	GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
-    	ctx.load("classpath:lifecycle/disposeInterface.xml");
-    	ctx.refresh();
+  public static void main(String[] args) throws Exception {
+    GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
+    ctx.load("classpath:lifecycle/disposeInterface.xml");
+    ctx.refresh();
 
-        DestructiveBeanWithInterface bean = (DestructiveBeanWithInterface) ctx.getBean("destructiveBean");
+    DestructiveBeanWithInterface bean = (DestructiveBeanWithInterface) ctx.getBean("destructiveBean");
 
-        System.out.println("Calling destroy()");
-        ctx.destroy();
-        System.out.println("Called destroy()");
+    System.out.println("Calling destroy()");
+    ctx.destroy();
+    System.out.println("Called destroy()");
 
-    }
+  }
 
 }

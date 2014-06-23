@@ -9,8 +9,7 @@ package com.apress.prospring3.ch5.pe;
  */
 public class Name {
 
-	private String firstName;
-	
+	private String firstName;	
 	private String lastName;
 
 	public Name() {
@@ -18,7 +17,7 @@ public class Name {
 	
 	public Name(String firstName, String lastName) {
 		this.firstName = firstName;
-		this.lastName = lastName;
+		this.lastName  = lastName;
 	}
 	
 	public String getFirstName() {

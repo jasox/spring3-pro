@@ -44,8 +44,8 @@ public class AppConfig {
 	}
 	
 	// XML: 
-    // <bean id="messageRenderer" class="com.apress.prospring3.ch5.javaconfig.StandardOutMessageRenderer"
-    //        p:messageProvider-ref="messageProvider"/>	
+  // <bean id="messageRenderer" class="com.apress.prospring3.ch5.javaconfig.StandardOutMessageRenderer"
+  //        p:messageProvider-ref="messageProvider"/>	
 	@Bean(name="messageRenderer")
 	@Scope(value="prototype")  // XML: <bean ... scope="prototype"/>
 	@DependsOn(value="messageProvider")  // XML: <bean ... depends-on="messageProvider"/>

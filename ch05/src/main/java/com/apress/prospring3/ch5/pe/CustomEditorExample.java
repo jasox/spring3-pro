@@ -10,23 +10,23 @@ import org.springframework.context.support.GenericXmlApplicationContext;
  */
 public class CustomEditorExample {
 
-	private Name name;
+  private Name name;
 
-    public static void main(String[] args) {
-    	GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
-    	ctx.load("classpath:pe/custom.xml");
-    	ctx.refresh();
+  public static void main(String[] args) {
+    GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
+    ctx.load("classpath:pe/custom.xml");
+    ctx.refresh();
 
-        CustomEditorExample bean = (CustomEditorExample) ctx.getBean("exampleBean");
+    CustomEditorExample bean = (CustomEditorExample) ctx.getBean("exampleBean");
 
-        System.out.println(bean.getName());
-    }
+    System.out.println(bean.getName());
+  }
 
-	public Name getName() {
-		return name;
-	}
+  public Name getName() {
+    return name;
+  }
 
-	public void setName(Name name) {
-		this.name = name;
-	}
+  public void setName(Name name) {
+    this.name = name;
+  }
 }

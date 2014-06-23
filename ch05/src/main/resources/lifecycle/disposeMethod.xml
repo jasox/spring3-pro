@@ -5,7 +5,7 @@
     
     <bean id="destructiveBean" class="com.apress.prospring3.ch5.lifecycle.DestructiveBean" destroy-method="destroy">
         <property name="filePath">
-            <value>d:/temp/test.txt</value>
+            <value>c:/temp/test.txt</value>
         </property>
     </bean>
     

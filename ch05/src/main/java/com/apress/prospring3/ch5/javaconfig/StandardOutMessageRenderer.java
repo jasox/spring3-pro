@@ -3,31 +3,29 @@
  */
 package com.apress.prospring3.ch5.javaconfig;
 
-
 /**
  * @author Clarence
  *
  */
 public class StandardOutMessageRenderer implements MessageRenderer {
 
-    private MessageProvider messageProvider = null;
-	
-	public void render() {
-        if (messageProvider == null) {
-            throw new RuntimeException(
-                    "You must set the property messageProvider of class:"
-                            + StandardOutMessageRenderer.class.getName());
-        }
+  private MessageProvider messageProvider = null;
 
-        System.out.println(messageProvider.getMessage());	
-	}
+  public void render() {
+    if (messageProvider == null) {
+      throw new RuntimeException(
+          "You must set the property messageProvider of class:" + StandardOutMessageRenderer.class.getName());
+    }
 
-	public void setMessageProvider(MessageProvider provider) {
-        this.messageProvider = provider;		
-	}
+    System.out.println(messageProvider.getMessage());
+  }
 
-	public MessageProvider getMessageProvider() {
-        return this.messageProvider;
-	}
-	
+  public void setMessageProvider(MessageProvider provider) {
+    this.messageProvider = provider;
+  }
+
+  public MessageProvider getMessageProvider() {
+    return this.messageProvider;
+  }
+
 }

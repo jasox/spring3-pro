@@ -16,6 +16,7 @@ public class LoggingBean implements BeanNameAware {
     
     private String beanName = null;
 
+    @Override
     public void setBeanName(String beanName) {
         this.beanName = beanName;
     }
