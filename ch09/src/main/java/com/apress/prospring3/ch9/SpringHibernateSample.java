@@ -39,7 +39,7 @@ public class SpringHibernateSample {
 		Contact contact;
 		
 		// Find contact by ID
-		contact = contactDao.findById(1l);
+		contact = contactDao.findById(1L);
 		System.out.println("");
 		System.out.println("Contact with id 1:" + contact);
 		System.out.println("");		
@@ -58,7 +58,7 @@ public class SpringHibernateSample {
 		listContactsWithDetail(contacts);
 
 		// Update contact
-		contact = contactDao.findById(1l);
+		contact = contactDao.findById(1L);
 		contact.setFirstName("Kim Fung");
 		Set<ContactTelDetail> contactTels = contact.getContactTelDetails();
 		ContactTelDetail toDeleteContactTel = null;
@@ -73,7 +73,7 @@ public class SpringHibernateSample {
 		listContactsWithDetail(contacts);
 		
 		// Delete contact
-		contact = contactDao.findById(1l);
+		contact = contactDao.findById(1L);
 		contactDao.delete(contact);
 		contacts = contactDao.findAllWithDetail();
 		listContactsWithDetail(contacts);	

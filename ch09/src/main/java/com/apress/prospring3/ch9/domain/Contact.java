@@ -34,9 +34,9 @@ import javax.persistence.Version;
 @Table(name = "contact")
 @NamedQueries({
 	@NamedQuery(name="Contact.findById", 
-			    query="select distinct c from Contact c left join fetch c.contactTelDetails t left join fetch c.hobbies h where c.id = :id"),
+		query="select distinct c from Contact c left join fetch c.contactTelDetails t left join fetch c.hobbies h where c.id = :id"),
 	@NamedQuery(name="Contact.findAllWithDetail", 
-                query="select distinct c from Contact c left join fetch c.contactTelDetails t left join fetch c.hobbies h")
+    query="select distinct c from Contact c left join fetch c.contactTelDetails t left join fetch c.hobbies h")
 })
 public class Contact implements Serializable {
 

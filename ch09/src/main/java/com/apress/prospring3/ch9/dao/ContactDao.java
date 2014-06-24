@@ -4,7 +4,6 @@
 package com.apress.prospring3.ch9.dao;
 
 import java.util.List;
-
 import com.apress.prospring3.ch9.domain.Contact;
 
 /**

@@ -26,13 +26,14 @@ public class ContactDaoImpl implements ContactDao {
 	
 	private Log log = LogFactory.getLog(ContactDaoImpl.class);
 	
+	@Resource(name="sessionFactory")
 	private SessionFactory sessionFactory;	
 
 	public SessionFactory getSessionFactory() {
 		return sessionFactory;
 	}
 
-	@Resource(name="sessionFactory")
+	
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
