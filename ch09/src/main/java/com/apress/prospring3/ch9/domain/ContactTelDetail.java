@@ -34,7 +34,7 @@ public class ContactTelDetail implements Serializable {
 	}
 
 	public ContactTelDetail(String telType, String telNumber) {
-		this.telType = telType;
+		this.telType   = telType;
 		this.telNumber = telNumber;
 	}
 
@@ -91,4 +91,5 @@ public class ContactTelDetail implements Serializable {
 		return "Contact Tel Detail - Id: " + id + ", Contact id: " + getContact().getId()
 				+ ", Type: " + telType + ", Number: " + telNumber;
 	}	
+	
 }

@@ -14,11 +14,7 @@
 	<jdbc:embedded-database id="dataSource" type="H2">
         <jdbc:script location="classpath:schema.sql"/>
         <jdbc:script location="classpath:test-data.sql"/>
-    </jdbc:embedded-database>
-    
-    <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
-        <property name="sessionFactory" ref="sessionFactory"/>
-    </bean>    
+    </jdbc:embedded-database> 
     
 	<tx:annotation-driven/>
 
@@ -37,5 +33,9 @@
             </props>
         </property>        
     </bean>
+    
+    <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>      
 
 </beans>

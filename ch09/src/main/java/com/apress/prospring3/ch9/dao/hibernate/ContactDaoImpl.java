@@ -4,7 +4,6 @@
 package com.apress.prospring3.ch9.dao.hibernate;
 
 import java.util.List;
-
 import javax.annotation.Resource;
 
 import org.apache.commons.logging.Log;
@@ -28,11 +27,11 @@ public class ContactDaoImpl implements ContactDao {
 	
 	@Resource(name="sessionFactory")
 	private SessionFactory sessionFactory;	
+	
 
 	public SessionFactory getSessionFactory() {
 		return sessionFactory;
 	}
-
 	
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
@@ -49,7 +48,7 @@ public class ContactDaoImpl implements ContactDao {
 
 	public Contact findById(Long id) {
 		return (Contact) sessionFactory.getCurrentSession().
-				getNamedQuery("Contact.findById").setParameter("id", id).uniqueResult();
+				getNamedQuery("Contact.findByIdWithDetail").setParameter("id", id).uniqueResult();
 	}
 
 	public Contact save(Contact contact) {
