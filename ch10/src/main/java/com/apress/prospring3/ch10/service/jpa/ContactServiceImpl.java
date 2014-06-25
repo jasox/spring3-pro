@@ -25,17 +25,25 @@ import com.apress.prospring3.ch10.domain.Contact_;
 import com.apress.prospring3.ch10.service.ContactService;
 
 /**
+ * The @Service annotation is to identify that it’s a Spring component that provides business services to
+ * another layer and assigns the Spring bean the name "jpaContactService". <br/>
+ * The @Repository annotation indicates that the class contains data access logic and instructs Spring 
+ * to translate the vendor-specific exceptions to Spring’s <b>DataAccessException</b> hierarchy. Actually, 
+ * you can use @Repository("jpaContactService") and get rid of the @Service annotation; the effect is the same. <br/> 
+ * Here we just use the @Service annotation to indicate it belongs to the service layer (like @Controller 
+ * indicates the component is in the web layer) because it is more developer-friendly. 
+ * As you will be already familiar, the @Transactional annotation is for defining transaction requirements.
+ * 
  * @author Clarence
- *
  */
 @Service("jpaContactService")
-@Repository
+@Repository  // indicate to translate the vendor-specific exceptions to Spring’s DataAccessException hierarchy
 @Transactional
 public class ContactServiceImpl implements ContactService {
 
 	private Log log = LogFactory.getLog(ContactServiceImpl.class);	
 	
-	@PersistenceContext
+	@PersistenceContext // (unitName="...")
 	private EntityManager em;
 	
 	@Transactional(readOnly=true)
@@ -52,7 +60,7 @@ public class ContactServiceImpl implements ContactService {
 
 	@Transactional(readOnly=true)
 	public Contact findById(Long id) {
-		TypedQuery<Contact> query = em.createNamedQuery("Contact.findById", Contact.class);
+		TypedQuery<Contact> query = em.createNamedQuery("Contact.findByIdWithDetail", Contact.class);
 		query.setParameter("id", id);
 		return query.getSingleResult();
 	}
@@ -61,7 +69,8 @@ public class ContactServiceImpl implements ContactService {
 		if (contact.getId() == null) { // Insert Contact
 			log.info("Inserting new contact");
 			em.persist(contact);
-		} else {                       // Update Contact
+		} 
+		else {                       // Update Contact
 			em.merge(contact);
 			log.info("Updating existing contact");
 		}
@@ -76,7 +85,7 @@ public class ContactServiceImpl implements ContactService {
 	}
 	
 	final static String ALL_CONTACT_NATIVE_QUERY =
-			"select id, first_name, last_name, birth_date, version from contact";
+			"SELECT id, first_name, last_name, birth_date, version FROM contact";
 
 	@Transactional(readOnly=true)
 	public List<Contact> findAllByNativeQuery() {
@@ -123,8 +132,7 @@ public class ContactServiceImpl implements ContactService {
 		return null;
 	}
 
-	public List<Contact> findByFirstNameAndLastName(String firstName,
-			String lastName) {
+	public List<Contact> findByFirstNameAndLastName(String firstName,	String lastName) {
 		// Not implemented
 		return null;
 	}	

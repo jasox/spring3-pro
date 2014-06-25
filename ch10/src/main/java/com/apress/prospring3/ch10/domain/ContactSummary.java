@@ -11,10 +11,8 @@ import java.io.Serializable;
  */
 public class ContactSummary implements Serializable {
 
-	private String firstName;
-	
-	private String lastName;
-	
+	private String firstName;	
+	private String lastName;	
 	private String homeTelNumber;
 
 	public ContactSummary(String firstName, String lastName, String homeTelNumber) {

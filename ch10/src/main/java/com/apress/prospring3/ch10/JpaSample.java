@@ -43,7 +43,7 @@ public class JpaSample {
 		listContactsWithDetail(contacts);		
 	
 		// Find contact by ID
-		contact = contactService.findById(1l);
+		contact = contactService.findById(1L);
 		System.out.println("");
 		System.out.println("Contact with id 1:" + contact);
 		System.out.println("");		
@@ -63,7 +63,7 @@ public class JpaSample {
 		listContactsWithDetail(contacts);
 		
 		// Delete contact
-		contact = contactService.findById(1l);
+		contact = contactService.findById(1L);
 		contactService.delete(contact);
 		contacts = contactService.findAllWithDetail();
 		listContactsWithDetail(contacts);	

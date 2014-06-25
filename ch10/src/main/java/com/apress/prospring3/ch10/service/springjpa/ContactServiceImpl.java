@@ -38,8 +38,7 @@ public class ContactServiceImpl implements ContactService {
 	}
 
 	@Transactional(readOnly=true)	
-	public List<Contact> findByFirstNameAndLastName(String firstName,
-			String lastName) {
+	public List<Contact> findByFirstNameAndLastName(String firstName, String lastName) {
 		return contactRepository.findByFirstNameAndLastName(firstName, lastName);
 	}
 

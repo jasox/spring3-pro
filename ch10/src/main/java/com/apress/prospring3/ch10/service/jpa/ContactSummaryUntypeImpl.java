@@ -22,23 +22,21 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class ContactSummaryUntypeImpl {
 
-	@PersistenceContext
-	private EntityManager em;
-	
-	@Transactional(readOnly=true)
-	public void displayAllContactSummary() {
+  @PersistenceContext
+  private EntityManager em;
 
-		List result = em
-				.createQuery("select c.firstName, c.lastName, t.telNumber "
-						+ "from Contact c left join c.contactTelDetails t " 
-						+ " where t.telType='Home'")
-				.getResultList();
-		int count = 0;
-		for (Iterator i = result.iterator(); i.hasNext();) {
-			Object[] values = (Object[]) i.next();
-			System.out.println(++count + ": " + values[0] + ", " + values[1] + ", " + values[2]);
-		}
+  @Transactional(readOnly = true)
+  public void displayAllContactSummary() {
 
-	}
+    List result = em.createQuery(
+        "select c.firstName, c.lastName, t.telNumber from Contact c left join c.contactTelDetails t "
+            + " where t.telType='Home'").getResultList();
+    int count = 0;
+    for (Iterator i = result.iterator(); i.hasNext();) {
+      Object[] values = (Object[]) i.next();
+      System.out.println(++count + ": " + values[0] + ", " + values[1] + ", " + values[2]);
+    }
+
+  }
 
 }

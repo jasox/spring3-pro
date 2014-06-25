@@ -65,9 +65,9 @@ public class ContactAudit implements Auditable<String, Long>, Serializable {
 	private Set<ContactTelDetail> contactTelDetails = new HashSet<ContactTelDetail>();
 
 	// Audit fields
-	private String createdBy;
+	private String   createdBy;
 	private DateTime createdDate;	
-	private String lastModifiedBy;
+	private String   lastModifiedBy;
 	private DateTime lastModifiedDate;
 	
 	public ContactAudit() {
@@ -201,7 +201,8 @@ public class ContactAudit implements Auditable<String, Long>, Serializable {
 	public boolean isNew() {
 		if (id == null) {
 			return true;
-		} else {
+		} 
+		else {
 			return false;
 		}
 	}

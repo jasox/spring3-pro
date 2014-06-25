@@ -39,7 +39,7 @@ public class SpringJpaAuditSample {
 		listContacts(contacts);	
 		
 		// Find by id
-		contact = contactService.findById(1l);
+		contact = contactService.findById(1L);
 		System.out.println("");
 		System.out.println("Contact with id 1:" + contact);
 		System.out.println("");
@@ -52,11 +52,11 @@ public class SpringJpaAuditSample {
 		listContacts(contacts);
 		
 		// Find audit record by revision
-		ContactAudit oldContact = contactService.findAuditByRevision(1l, 1);
+		ContactAudit oldContact = contactService.findAuditByRevision(1L, 1);
 		System.out.println("");
 		System.out.println("Old Contact with id 1 and rev 1:" + oldContact);	
 		System.out.println("");
-		oldContact = contactService.findAuditByRevision(1l, 2);
+		oldContact = contactService.findAuditByRevision(1L, 2);
 		System.out.println("");
 		System.out.println("Old Contact with id 1 and rev 2:" + oldContact);	
 		System.out.println("");			

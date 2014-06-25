@@ -24,21 +24,17 @@ import com.apress.prospring3.ch10.service.ContactSummaryService;
 @Transactional
 public class ContactSummaryServiceImpl implements ContactSummaryService {
 
-	@PersistenceContext
-	private EntityManager em;
-	
-	@Transactional(readOnly=true)
-	public List<ContactSummary> findAll() {
+  @PersistenceContext
+  private EntityManager em;
 
-		List<ContactSummary> result =
-				em.createQuery(
-						"select new com.apress.prospring3.ch10.domain.ContactSummary(" 
-				                + "c.firstName, c.lastName, t.telNumber) "
-								+ "from Contact c left join c.contactTelDetails t " 
-				                + "where t.telType='Home'",
-				                ContactSummary.class)
-				 .getResultList();
-		return result;
-	}
+  @Transactional(readOnly = true)
+  public List<ContactSummary> findAll() {
+
+    List<ContactSummary> result = em.createQuery(
+        "select new com.apress.prospring3.ch10.domain.ContactSummary(c.firstName, c.lastName, t.telNumber) "
+          + "from Contact c left join c.contactTelDetails t where t.telType='Home'", 
+            ContactSummary.class).getResultList();
+    return result;
+  }
 
 }
