@@ -25,17 +25,16 @@ public class TxAnnotationSample {
 		ContactService contactService = ctx.getBean("contactService", ContactService.class);
 
 		// Testing findAll() method
-/*		List<Contact> contacts = contactService.findAll();
-		
+		List<Contact> contacts = contactService.findAll();		
 		for (Contact contactTemp: contacts) {
 			System.out.println(contactTemp);
-		}	*/	
+		}		
 		
 		// Testing save() method
-/*		Contact contact = contactService.findById(1l);
+		Contact contact = contactService.findById(1l);
 		contact.setFirstName("Peter");
 		contactService.save(contact);
-		System.out.println("Contact saved successfully");	*/
+		System.out.println("Contact saved successfully");	
 		
 		// Testing countAll() method
 		System.out.println("Contact count: " + contactService.countAll());		

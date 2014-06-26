@@ -32,7 +32,7 @@ public class TxDeclarativeSample {
 		}
 		
 		// Testing save() method
-		Contact contact = contactService.findById(1l);
+		Contact contact = contactService.findById(1L);
 		contact.setFirstName("Peter");
 		contactService.save(contact);
 		System.out.println("Contact saved successfully");

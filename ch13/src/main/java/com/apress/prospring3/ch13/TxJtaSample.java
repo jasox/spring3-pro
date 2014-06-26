@@ -24,7 +24,7 @@ public class TxJtaSample {
 
 		Contact contact = new Contact();
 		contact.setFirstName("Jta");
-		contact.setLastName("Manager");
+		contact.setLastName("Manager-4");
 		contactService.save(contact);
 		System.out.println("Contact saved successfully");		
 		

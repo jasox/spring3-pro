@@ -32,6 +32,7 @@ public class ContactServiceImpl implements ContactService {
 	@PersistenceContext(unitName="emfB")
 	private EntityManager emB;	
 	
+	
 	@Transactional(readOnly=true)
 	public List<Contact> findAll() {
 		return null;
@@ -50,11 +51,11 @@ public class ContactServiceImpl implements ContactService {
 			emA.persist(contact);
 			emB.persist(contactB);
 			//throw new JpaSystemException(new PersistenceException());
-		} else {
+		} 
+		else {
 			emA.merge(contact);
 			emB.merge(contact);
-		}
-		
+		}		
 		return contact;
 	}
 

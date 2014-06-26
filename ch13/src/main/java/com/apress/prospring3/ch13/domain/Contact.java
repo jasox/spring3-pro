@@ -26,10 +26,8 @@ import javax.persistence.Version;
 @Entity
 @Table(name = "contact")
 @NamedQueries({
-	@NamedQuery(name="Contact.findAll",
-			    query="select c from Contact c"),
-	@NamedQuery(name="Contact.countAll",
-			    query="select count(c) from Contact c")			    
+	@NamedQuery(name="Contact.findAll",  query="select c from Contact c"),
+	@NamedQuery(name="Contact.countAll", query="select count(c) from Contact c")			    
 })
 public class Contact implements Serializable {
 

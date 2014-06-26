@@ -4,7 +4,6 @@
 package com.apress.prospring3.ch13;
 
 import org.springframework.context.support.GenericXmlApplicationContext;
-
 import com.apress.prospring3.ch13.service.ContactService;
 
 /**
