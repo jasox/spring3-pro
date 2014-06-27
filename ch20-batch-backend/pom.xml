@@ -3,8 +3,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.apress</groupId>
-	<artifactId>prospring3</artifactId>
-	<name>abc</name>
+	<artifactId>prospring3-ch20-batch-backend</artifactId>
+	<name>ProSpring3-Ch20-Batch-Backend</name>
 	<packaging>jar</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>

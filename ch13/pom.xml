@@ -5,10 +5,10 @@
 	
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.springframework.samples.spring</groupId>
-	<artifactId>spring-jpa-utility</artifactId>
+	<artifactId>prospring3-ch13</artifactId>
 	<version>1.0.0.CI-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	<name>Spring JPA Utility</name>
+	<name>ProSpring3-Ch13</name>
 	<url>http://www.springframework.org</url>
 	<description>
 		<![CDATA[This project is a minimal jar utility with Spring configuration for JPA usage.]]>

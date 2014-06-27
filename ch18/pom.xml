@@ -3,8 +3,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.apress</groupId>
-	<artifactId>prospring3</artifactId>
-	<name>abc</name>
+	<artifactId>prospring3-ch18</artifactId>
+	<name>ProSpring3-Ch18</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>
@@ -144,7 +144,7 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
-            <version>3.6.8.Final</version>
+            <version>3.6.10.Final</version>
         </dependency>      
         <dependency>
             <groupId>javax.validation</groupId>

@@ -6,10 +6,10 @@
 	
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.springframework.samples.spring</groupId>
-	<artifactId>spring-hibernate-utility</artifactId>
+	<artifactId>prospring3-ch09</artifactId>
 	<version>1.0.0.CI-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	<name>Spring Hibernate Utility</name>
+	<name>ProSpring3-Ch09</name>
 	<url>http://www.springframework.org</url>
 	<description>
 		<![CDATA[This project is a minimal jar utility with Spring configuration for Hibernate.]]>
