@@ -25,7 +25,8 @@ public class SimpleMessageListener implements MessageListener {
 		
 		try {
 			logger.info("Message received: " + textMessage.getText());
-		} catch (JMSException ex) {
+		} 
+		catch (JMSException ex) {
 			logger.error("JMS error", ex);
 		}
 		

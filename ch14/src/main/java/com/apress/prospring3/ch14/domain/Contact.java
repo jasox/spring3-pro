@@ -13,13 +13,11 @@ import org.joda.time.DateTime;
  */
 public class Contact {
 
-	private String firstName;
-	
-	private String lastName;
-	
-	private DateTime birthDate;
-	
+	private String firstName;	
+	private String lastName;	
+	private DateTime birthDate;	
 	private URL personalSite;
+	
 
 	public String getFirstName() {
 		return firstName;

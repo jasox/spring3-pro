@@ -22,7 +22,7 @@ import javax.validation.Payload;
 @Documented
 public @interface CheckIndividualCustomer {
 
-	String message() default "Individual customer should have gender and last name defined";
+	String message() default "(from validator) Individual customer should have gender and last name defined";
 	Class<?>[] groups() default {};
 	Class<? extends Payload>[] payload() default {};		
 	

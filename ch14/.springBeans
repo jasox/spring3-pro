@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beansProjectDescription>
 	<version>1</version>
-	<pluginVersion><![CDATA[2.8.1.201111220115-RELEASE]]></pluginVersion>
+	<pluginVersion><![CDATA[3.5.1.201404300732-RELEASE]]></pluginVersion>
 	<configSuffixes>
 		<configSuffix><![CDATA[xml]]></configSuffix>
 	</configSuffixes>
 	<enableImports><![CDATA[true]]></enableImports>
 	<configs>
+		<config>src/main/resources/builtin.xml</config>
+		<config>src/main/resources/conv-format-service-app-context.xml</config>
+		<config>src/main/resources/conv-service-app-context.xml</config>
+		<config>src/main/resources/jsr303-app-context.xml</config>
+		<config>src/main/resources/prop-editor-app-context.xml</config>
+		<config>src/main/resources/spring-validator-app-context.xml</config>
 	</configs>
+	<autoconfigs>
+	</autoconfigs>
 	<configSets>
 	</configSets>
 </beansProjectDescription>
