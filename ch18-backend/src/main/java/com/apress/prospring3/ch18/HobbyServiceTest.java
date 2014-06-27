@@ -3,12 +3,10 @@
  */
 package com.apress.prospring3.ch18;
 
-import java.util.List;
-
-import org.springframework.context.support.GenericXmlApplicationContext;
-
 import com.apress.prospring3.ch18.domain.Hobby;
 import com.apress.prospring3.ch18.service.HobbyService;
+import java.util.List;
+import org.springframework.context.support.GenericXmlApplicationContext;
 
 /**
  * @author Clarence

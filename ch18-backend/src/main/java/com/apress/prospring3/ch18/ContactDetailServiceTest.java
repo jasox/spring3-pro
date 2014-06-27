@@ -3,11 +3,10 @@
  */
 package com.apress.prospring3.ch18;
 
-import org.springframework.context.support.GenericXmlApplicationContext;
-
 import com.apress.prospring3.ch18.domain.Contact;
 import com.apress.prospring3.ch18.domain.Hobby;
 import com.apress.prospring3.ch18.service.ContactService;
+import org.springframework.context.support.GenericXmlApplicationContext;
 
 /**
  * @author Clarence
@@ -28,8 +27,8 @@ public class ContactDetailServiceTest {
 		
 		ContactService contactService = ctx.getBean("contactService", ContactService.class);
 		
-		Contact contact = contactService.findByIdWithDetail(1l);	
-		//Contact contact = contactService.findById(1l);
+		Contact contact = contactService.findByIdWithDetail(1L);	
+		//Contact contact = contactService.findById(1L);
 		
 		System.out.println(contact);
 		for (Hobby hobby: contact.getHobbies()) {
