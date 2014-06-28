@@ -34,7 +34,7 @@ public class Hobby implements Serializable {
 	}
 
 	public Hobby(String hobbyId, Set<Contact> contacts) {
-		this.hobbyId = hobbyId;
+		this.hobbyId  = hobbyId;
 		this.contacts = contacts;
 	}
 
