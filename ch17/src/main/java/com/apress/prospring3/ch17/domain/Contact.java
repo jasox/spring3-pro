@@ -105,7 +105,8 @@ public class Contact implements Serializable {
 	}
 
 	@Basic(fetch=FetchType.LAZY)
-	@Lob @Column(name = "PHOTO")
+	@Lob 
+	@Column(name = "PHOTO")
 	public byte[] getPhoto() {
 		return photo;
 	}

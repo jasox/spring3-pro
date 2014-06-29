@@ -14,9 +14,9 @@ import com.apress.prospring3.ch18.domain.Contact;
  */
 public class ContactListBean implements Serializable {
 
-	private List<Contact> contacts;
-	
+	private List<Contact> contacts;	
 	private Contact selectedContact;
+	
 
 	public List<Contact> getContacts() {
 		return contacts;

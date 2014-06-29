@@ -28,6 +28,7 @@ public class ContactServiceImpl implements ContactService {
 
 	@Autowired
 	private ContactRepository contactRepository;
+	
 
 	@Transactional(readOnly=true)
 	public List<Contact> findAll() {

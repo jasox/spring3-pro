@@ -26,6 +26,7 @@ public class HobbyServiceImpl implements HobbyService {
 
 	@Autowired
 	private HobbyRepository hobbyRepository;
+	
 
 	@Transactional(readOnly=true)
 	public List<Hobby> findAll() {

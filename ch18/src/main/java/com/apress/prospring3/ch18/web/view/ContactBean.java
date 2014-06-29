@@ -16,9 +16,9 @@ import com.apress.prospring3.ch18.domain.Hobby;
  */
 public class ContactBean implements Serializable {
 	
-	private Contact contact;
-	
+	private Contact contact;	
 	private DualListModel<Hobby> hobbies;
+	
 
 	public Contact getContact() {
 		return contact;

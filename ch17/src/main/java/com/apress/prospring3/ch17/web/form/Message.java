@@ -9,9 +9,9 @@ package com.apress.prospring3.ch17.web.form;
  */
 public class Message {
 
-	private String type;
-	
+	private String type;	
 	private String message;
+	
 	
 	public Message() {
 	}

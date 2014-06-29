@@ -38,6 +38,7 @@ public class ContactController {
 	@Autowired
 	private HobbyService hobbyService;	
 	
+	
 	public ContactListBean newContactListBean() {
 		
 		ContactListBean contactListBean = new ContactListBean();

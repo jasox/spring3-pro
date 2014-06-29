@@ -13,13 +13,11 @@ import com.apress.prospring3.ch17.domain.Contact;
  */
 public class ContactGrid {
 
-	private int totalPages;
-	
-	private int currentPage;
-	
-	private long totalRecords;
-	
+	private int totalPages;	
+	private int currentPage;	
+	private long totalRecords;	
 	private List<Contact> contactData;
+	
 
 	public int getTotalPages() {
 		return totalPages;
