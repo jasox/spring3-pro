@@ -4,7 +4,6 @@
 package com.apress.prospring3.ch18.web.view;
 
 import java.io.Serializable;
-
 import org.primefaces.model.DualListModel;
 
 import com.apress.prospring3.ch18.domain.Contact;

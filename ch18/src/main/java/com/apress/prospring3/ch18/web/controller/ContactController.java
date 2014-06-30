@@ -39,65 +39,43 @@ public class ContactController {
 	private HobbyService hobbyService;	
 	
 	
-	public ContactListBean newContactListBean() {
-		
-		ContactListBean contactListBean = new ContactListBean();
-		
-		contactListBean.setContacts(contactService.findAll());
-		
-		return contactListBean;
-		
+	public ContactListBean newContactListBean() {		
+	  logger.info("Creating new ContactListBean");
+		ContactListBean contactListBean = new ContactListBean();		
+		contactListBean.setContacts(contactService.findAll());		
+		return contactListBean;		
 	}
 	
-	public Contact showContact(RequestContext context) {
-		
-		Long id = context.getRequestScope().getLong("contactId");
-		
-		logger.info("Selected contact id: {}", id);
-		
-		return contactService.findByIdWithDetail(id);
-		
+	public Contact showContact(RequestContext context) {		
+		Long id = context.getRequestScope().getLong("contactId");		
+		logger.info("Selected contact id: {}", id);		
+		return contactService.findByIdWithDetail(id);		
 	}
 	
-	public ContactBean newContactBean() {
-		
-		logger.info("Creating new contact bean");
-		ContactBean contactBean = new ContactBean();
-		
+	public ContactBean newContactBean() {		
+		logger.info("Creating new ContactBean");
+		ContactBean contactBean = new ContactBean();		
 		Contact contact = new Contact();
 		contactBean.setContact(contact);
-		
-        List<Hobby> hobbiesSource = new ArrayList<Hobby>();
-        List<Hobby> hobbiesTarget = new ArrayList<Hobby>();
-       
-        for (Hobby hobby: hobbyService.findAll()) {
-        	hobbiesSource.add(hobby);
-        }
-		
-        DualListModel<Hobby> hobbies = new DualListModel<Hobby>(hobbiesSource, hobbiesTarget);  
-        
-        contactBean.setHobbies(hobbies);
-		
-		return contactBean;
-		
+		List<Hobby> hobbiesSource = new ArrayList<Hobby>();
+    List<Hobby> hobbiesTarget = new ArrayList<Hobby>();
+    for (Hobby hobby : hobbyService.findAll()) {
+      hobbiesSource.add(hobby);
+    }
+    DualListModel<Hobby> hobbies = new DualListModel<Hobby>(hobbiesSource, hobbiesTarget);
+    contactBean.setHobbies(hobbies);		
+		return contactBean;		
 	}
 	
-	public void saveContact(RequestContext context) {
-		
+	public void saveContact(RequestContext context) {		
 		// Retrieve contact bean
 		ContactBean contactBean = (ContactBean) context.getFlowScope().get("contactBean");
-		Contact contact = contactBean.getContact();
-		
-		Set<Hobby> hobbies = new HashSet<Hobby>(contactBean.getHobbies().getTarget());
-		
-		contact.setHobbies(hobbies);
-		
-		contactService.save(contact);
-		
-		logger.info("Contact {} {} saved successfully", contact.getFirstName(), contact.getLastName());
-		
-		context.getMessageContext().addMessage(new MessageBuilder().info().code("message_contact_save_success").build());
-		
+		Contact contact = contactBean.getContact();		
+		Set<Hobby> hobbies = new HashSet<Hobby>(contactBean.getHobbies().getTarget());		
+		contact.setHobbies(hobbies);		
+		contactService.save(contact);		
+		logger.info("Contact {} {} saved successfully", contact.getFirstName(), contact.getLastName());		
+		context.getMessageContext().addMessage(new MessageBuilder().info().code("message_contact_save_success").build());		
 	}	
 	
 }

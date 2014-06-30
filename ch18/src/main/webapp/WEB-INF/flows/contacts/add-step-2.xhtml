@@ -17,7 +17,6 @@
 		<h:form>
 
 			<h3>
-
 				<h:outputText value="#{msg['label_contact_first_name']}: " />
 				<h:outputText value="#{contactBean.contact.firstName}" />
 				<br />
@@ -28,11 +27,13 @@
 				<h:outputText value="#{contactBean.contact.birthDate}">
 					<f:converter converterId="jodaDataTimeConverter" />
 				</h:outputText>
-
 			</h3>
 
-			<p:pickList value="#{contactBean.hobbies}" var="hobby"
-				itemLabel="#{hobby.hobbyId}" itemValue="#{hobby.hobbyId}"
+			<p:pickList 
+			    value="#{contactBean.hobbies}" 
+			    var="hobby"
+				itemLabel="#{hobby.hobbyId}" 
+				itemValue="#{hobby.hobbyId}"
 				converter="hobby" />
 
 			<p:toolbar>

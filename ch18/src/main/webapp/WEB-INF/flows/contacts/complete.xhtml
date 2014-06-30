@@ -17,7 +17,6 @@
 		<p:messages />
 
 		<h:form>
-
 			<h3>
 				<h:outputText value="#{msg['label_contact_first_name']}: " />
 				<h:outputText value="#{contactBean.contact.firstName}" />
@@ -32,8 +31,8 @@
 			</h3>
 			<h3>#{msg['label_contact_hobbies']}</h3>
 			<p:dataList value="#{contactBean.hobbies.target}" var="hobby">  
-        #{hobby.hobbyId} 
-    </p:dataList>
+                #{hobby.hobbyId} 
+            </p:dataList>
 			<br />
 
 			<p:toolbar>
