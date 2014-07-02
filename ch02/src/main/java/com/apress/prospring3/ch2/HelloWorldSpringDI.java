@@ -12,14 +12,14 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class HelloWorldSpringDI {
 
-	public static void main(String[] args) {
+  public static void main(String[] args) {
 
-		// Initialize Spring application context
-		ApplicationContext ctx = new ClassPathXmlApplicationContext("app-context.xml");
-		
-		MessageRenderer mr = ctx.getBean("renderer", MessageRenderer.class);
-		mr.render();
-		
-	}
+    // Initialize Spring application context
+    ApplicationContext ctx = new ClassPathXmlApplicationContext("app-context.xml");
+
+    MessageRenderer mr = ctx.getBean("renderer", MessageRenderer.class);
+    mr.render();
+
+  }
 
 }
