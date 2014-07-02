@@ -117,6 +117,7 @@
             </snapshots>
         </pluginRepository>
     </pluginRepositories>
+    
     <distributionManagement>
         <downloadUrl>http://www.springframework.org/download</downloadUrl>
         <site>
@@ -134,4 +135,5 @@
             <url>file:///${user.dir}/target/staging/snapshot</url>
         </snapshotRepository>
     </distributionManagement>
+    
 </project>
