@@ -57,6 +57,12 @@ public class Target {
   //----------------------------------------------------------------------------
   
   public void showReferences() {    
+    if ( foo != null ) {
+      System.out.println(" foo  someValue                       ? " + foo.getSomeValue());
+    }  
+    if ( foo2 != null ) {
+      System.out.println(" foo2 someValue                       ? " + foo2.getSomeValue());
+    }  
     System.out.println(" foo and foo2 have the same references? " + (foo == foo2));
     System.out.println(" foo and foo2 have the same value     ? " + (foo.equals(foo2)));     
   }

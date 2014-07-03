@@ -8,7 +8,34 @@ package com.apress.prospring3.ch4.autowiring;
  */
 public class Foo {
   
-  private String someValue = "foo";
+  static int counter = 0;
+  
+  private Integer someValue = 0;
+  
+  //----------------------------------------------------------------------------
+  
+  public static int getCounter() {
+    return counter;
+  }
+
+  public static void setCounter(int counter) {
+    Foo.counter = counter;
+  }
+
+  public Integer getSomeValue() {
+    return someValue;
+  }
+
+  public void setSomeValue(Integer someValue) {
+    this.someValue = someValue;
+  }
+
+  public Foo() {
+    counter++;
+    this.someValue = counter;
+  };
+  
+  //----------------------------------------------------------------------------
 
   @Override
   public int hashCode() {
