@@ -17,7 +17,7 @@ public class BookwormOracle implements Oracle {
         return "Encyclopedias are a waste of money - use the Internet";
     }	
     
-    // Added - 21.06.2014 by jasox
+    // ADDED - 21.06.2014 by jasox
     public String toString() {
       return "From BookwormOracle : " + this.defineMeaningOfLife();
     }

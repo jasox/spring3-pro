@@ -15,11 +15,10 @@ public class StandardOutMessageRenderer implements MessageRenderer {
   private MessageProvider messageProvider = null;
 
   public void render() {
-    if (messageProvider == null) {
+    if (messageProvider == null) {   // IllegalArgumentException?
       throw new RuntimeException( "You must set the property messageProvider of class:"
-                                   + StandardOutMessageRenderer.class.getName());
+                                     + StandardOutMessageRenderer.class.getName());
     }
-
     System.out.println(messageProvider.getMessage());
   }
 

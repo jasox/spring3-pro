@@ -42,8 +42,7 @@ public class CollectionInjection {
     ctx.load("classpath:app-context-annotation.xml");
     ctx.refresh();
 
-    CollectionInjection instance = (CollectionInjection) ctx
-        .getBean("injectCollection");
+    CollectionInjection instance = (CollectionInjection) ctx.getBean("injectCollection");
     instance.displayInfo();
   }
 

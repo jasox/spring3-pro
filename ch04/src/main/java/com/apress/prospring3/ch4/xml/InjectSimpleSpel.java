@@ -18,7 +18,6 @@ public class InjectSimpleSpel {
   private Long    ageInSeconds;
 
   public static void main(String[] args) {
-
     GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
     ctx.load("classpath:app-context-xml.xml");
     ctx.refresh();

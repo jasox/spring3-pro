@@ -30,9 +30,11 @@ public class ConstructorConfusion {
 
   // Use this to externalize the integer value
   /*
-   * @Autowired public ConstructorConfusion(Integer someValue) {
-   * System.out.println("ConstructorConfusion(int) called"); this.someValue =
-   * "Number: " + Integer.toString(someValue); }
+   * @Autowired 
+   * public ConstructorConfusion(Integer someValue) {
+   *   System.out.println("ConstructorConfusion(int) called"); this.someValue =
+   *   "Number: " + Integer.toString(someValue); 
+   * }
    */
 
   public static void main(String[] args) {    

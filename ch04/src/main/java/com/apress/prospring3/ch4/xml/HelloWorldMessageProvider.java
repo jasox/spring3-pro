@@ -11,8 +11,7 @@ import com.apress.prospring3.ch4.MessageProvider;
  */
 public class HelloWorldMessageProvider implements MessageProvider {
 
-	public String getMessage() {
-		
+	public String getMessage() {		
 		return "Hello World!";
 	}
 	

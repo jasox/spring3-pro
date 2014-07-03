@@ -20,14 +20,20 @@ public class Target {
   }
 
   public Target(Foo foo) {
-    System.out.println("Target(Foo) called");
+    this.foo = foo;
+    System.out.println("Target(Foo) called ");
   }
 
   public Target(Foo foo, Bar bar) {
+    this.foo = foo;
+    this.bar = bar;
     System.out.println("Target(Foo, Bar) called");
   }
   
   public Target(Foo foo, Foo foo2, Bar bar) {
+    this.foo  = foo;
+    this.foo2 = foo2;
+    this.bar  = bar;
     System.out.println("Target(Foo, Foo, Bar) called");
   }
   
@@ -35,7 +41,7 @@ public class Target {
 
   public void setFoo(Foo foo) {
     this.foo = foo;
-    System.out.println("Property foo set");
+    System.out.println("Property foo set ");
   }
 
   public void setFoo2(Foo foo) {
@@ -46,9 +52,14 @@ public class Target {
   public void setBar(Bar bar) {
     this.bar = bar;
     System.out.println("Property bar set");
-  }
+  }  
   
   //----------------------------------------------------------------------------
+  
+  public void showReferences() {    
+    System.out.println(" foo and foo2 have the same references? " + (foo == foo2));
+    System.out.println(" foo and foo2 have the same value     ? " + (foo.equals(foo2)));     
+  }
 
   public static void main(String[] args) {
     GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
@@ -59,13 +70,15 @@ public class Target {
 
     System.out.println("\nUsing byName:\n");
     t = (Target) ctx.getBean("targetByName");
+    t.showReferences();
 
     System.out.println("\nUsing byType:\n");
     t = (Target) ctx.getBean("targetByType");
+    t.showReferences();
 
     System.out.println("\nUsing constructor:\n");
     t = (Target) ctx.getBean("targetConstructor");
-
+    t.showReferences();
   }
   
 }
