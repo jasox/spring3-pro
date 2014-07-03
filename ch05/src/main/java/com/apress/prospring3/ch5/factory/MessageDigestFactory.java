@@ -10,6 +10,7 @@ import java.security.MessageDigest;
  * application. You don’t know how to instantiate that class, but you know that the third-party application
  * did provide a class that can be used to get an instance of the JavaBean that your Spring application required. 
  * In this case, Spring bean’s factory-bean and factory-method attributes in the 'bean' tag can be used.
+ * 
  * @author clarence
  */
 // factory-bean

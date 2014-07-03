@@ -8,7 +8,7 @@ import javax.inject.Named;
 import javax.inject.Singleton;
 
 /**
- * we used @Named to define that it’s an injectable bean. 
+ * We used @Named to define that it’s an injectable bean. <br />
  * Notice the @Singleton annotation. It’s worth noting that in the JSR-330 standard, a bean’s 
  * default scope is <b>nonsingleton</b>, which is like Spring’s prototype scope. So, in a JSR-330 
  * environment, if you want your bean to be a singleton, you need to use the @Singleton annotation. 

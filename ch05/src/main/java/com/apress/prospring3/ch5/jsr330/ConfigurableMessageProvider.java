@@ -7,17 +7,17 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 /**
- * You will notice that all annotations belong to the javax.inject package, which is the JSR-330 standard. 
+ * You will notice that all annotations belong to the javax.inject package, which is the JSR-330 standard.<br /> 
  * This class used @Named in two places. First, it can be used to declare an injectable bean (the same 
  * as the @Component or @Service annotation in Spring). In the listing, the @Named("messageProvider")
  * annotation specifies that the ConfigurableMessageProvider is an injectable bean and gives it the name
- * messageProvider, which is the same as the name attribute in Spring’s 'bean' tag. Second, we use
- * constructor injection by using the @Inject annotation before the constructor that accepts a string value.
- * Then, we use @Named to specify that we want to inject the value that had the name message assigned.
+ * messageProvider, which is the same as the name attribute in Spring’s 'bean' tag. Second, we use constructor 
+ * injection by using the @Inject annotation before the constructor that accepts a string value. 
+ * Then, we use @Named to specify that we want to inject the value that had the name "message" assigned.
  * 
  * @author Clarence
- */
-@Named("messageProvider")  // declare an injectable bean  and gives it the name "messageProvider"
+ */                        // declare an injectable bean and gives it the name "messageProvider"
+@Named("messageProvider")  // like < bean name = "messageProvider" ...  in XML
 public class ConfigurableMessageProvider implements MessageProvider {
     
 	private String message = "Default message";
