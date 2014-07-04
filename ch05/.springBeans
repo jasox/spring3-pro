@@ -8,6 +8,24 @@
 	<enableImports><![CDATA[true]]></enableImports>
 	<configs>
 		<config>src/main/resources/app-context.xml</config>
+		<config>src/main/resources/appContext/messageSource.xml</config>
+		<config>src/main/resources/env/env.xml</config>
+		<config>src/main/resources/events/events.xml</config>
+		<config>src/main/resources/factory/factory.xml</config>
+		<config>src/main/resources/factory/factoryMethod.xml</config>
+		<config>src/main/resources/interaction/logging.xml</config>
+		<config>src/main/resources/interaction/shutdownHook.xml</config>
+		<config>src/main/resources/jsr330/jsr330.xml</config>
+		<config>src/main/resources/lifecycle/disposeInterface.xml</config>
+		<config>src/main/resources/lifecycle/disposeJSR250.xml</config>
+		<config>src/main/resources/lifecycle/disposeMethod.xml</config>
+		<config>src/main/resources/lifecycle/initInterface.xml</config>
+		<config>src/main/resources/lifecycle/initJSR250.xml</config>
+		<config>src/main/resources/lifecycle/initMethod.xml</config>
+		<config>src/main/resources/pe/builtin.xml</config>
+		<config>src/main/resources/pe/custom.xml</config>
+		<config>src/main/resources/profile/highschool-config.xml</config>
+		<config>src/main/resources/profile/kindergarten-config.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
