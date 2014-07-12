@@ -12,9 +12,11 @@ import com.apress.prospring3.ch12.service.impl.SuperOrderServiceImpl;
  * 
  */
 public class MultiFactory {
+  
 	private static final BasicFactory instance;
 	private OrderService orderService;
 	private OrderService superOrderService;
+	
 	static {
 		instance = new BasicFactory();
 	}

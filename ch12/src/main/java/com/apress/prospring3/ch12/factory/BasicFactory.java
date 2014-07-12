@@ -11,6 +11,7 @@ import com.apress.prospring3.ch12.service.impl.DefaultOrderServiceImpl;
  * 
  */
 public class BasicFactory {
+  
 	private static final BasicFactory instance;
 	private OrderService orderService;
 

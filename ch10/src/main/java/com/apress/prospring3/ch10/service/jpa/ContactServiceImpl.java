@@ -21,7 +21,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.apress.prospring3.ch10.domain.Contact;
-import com.apress.prospring3.ch10.domain.Contact_;
+//import com.apress.prospring3.ch10.domain.Contact_;
 import com.apress.prospring3.ch10.service.ContactService;
 
 /**
@@ -47,24 +47,28 @@ public class ContactServiceImpl implements ContactService {
 	private EntityManager em;
 	
 	@Transactional(readOnly=true)
+  @Override
 	public List<Contact> findAll() {
 		List<Contact> contacts = em.createNamedQuery("Contact.findAll", Contact.class).getResultList();
 		return contacts;
 	}
 
 	@Transactional(readOnly=true)
+  @Override
 	public List<Contact> findAllWithDetail() {
 		List<Contact> contacts = em.createNamedQuery("Contact.findAllWithDetail", Contact.class).getResultList();
 		return contacts;
 	}
 
 	@Transactional(readOnly=true)
+  @Override
 	public Contact findById(Long id) {
 		TypedQuery<Contact> query = em.createNamedQuery("Contact.findByIdWithDetail", Contact.class);
 		query.setParameter("id", id);
 		return query.getSingleResult();
 	}
 
+  @Override
 	public Contact save(Contact contact) {
 		if (contact.getId() == null) { // Insert Contact
 			log.info("Inserting new contact");
@@ -78,6 +82,7 @@ public class ContactServiceImpl implements ContactService {
 		return contact;
 	}
 
+  @Override
 	public void delete(Contact contact) {
 		Contact mergedContact = em.merge(contact);
 		em.remove(mergedContact);
@@ -88,6 +93,7 @@ public class ContactServiceImpl implements ContactService {
 			"SELECT id, first_name, last_name, birth_date, version FROM contact";
 
 	@Transactional(readOnly=true)
+  @Override
 	public List<Contact> findAllByNativeQuery() {
 
 		//return em.createNativeQuery(ALL_CONTACT_NATIVE_QUERY, Contact.class).getResultList();
@@ -95,8 +101,9 @@ public class ContactServiceImpl implements ContactService {
 	}
 
 	@Transactional(readOnly=true)
+  @Override
 	public List<Contact> findByCriteriaQuery(String firstName, String lastName) {
-
+    /*
 		log.info("Finding contact for firstName: " + firstName + " and lastName: " + lastName);
 		
 		CriteriaBuilder cb = em.getCriteriaBuilder();
@@ -124,14 +131,17 @@ public class ContactServiceImpl implements ContactService {
 		criteriaQuery.where(criteria);
 		List<Contact> result = em.createQuery(criteriaQuery).getResultList();
 		return result;
-		
+		*/
+	  return null; // Compilation errors with Contact_
 	}
 
+  @Override
 	public List<Contact> findByFirstName(String firstName) {
 		// Not implemented
 		return null;
 	}
 
+  @Override
 	public List<Contact> findByFirstNameAndLastName(String firstName,	String lastName) {
 		// Not implemented
 		return null;
