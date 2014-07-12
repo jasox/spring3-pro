@@ -35,6 +35,7 @@ public class CarServiceImpl implements CarService {
 	@Autowired
 	CarRepository carRepository;
 	
+	
 	@Transactional(readOnly=true)
 	public List<Car> findAll() {
 		return Lists.newArrayList(carRepository.findAll());

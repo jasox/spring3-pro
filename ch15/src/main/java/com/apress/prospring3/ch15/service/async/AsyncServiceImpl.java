@@ -29,7 +29,8 @@ public class AsyncServiceImpl implements AsyncService {
 		
 		try {
 			Thread.sleep(10000);
-		} catch (Exception ex) {
+		} 
+		catch (Exception ex) {
 			ex.printStackTrace();
 		}
 		
@@ -44,7 +45,8 @@ public class AsyncServiceImpl implements AsyncService {
 		
 		try {
 			Thread.sleep(5000);
-		} catch (Exception ex) {
+		} 
+		catch (Exception ex) {
 			ex.printStackTrace();
 		}
 		

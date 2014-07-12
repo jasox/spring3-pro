@@ -3,8 +3,7 @@
  */
 package com.apress.prospring3.ch15.domain;
 
-import static javax.persistence.GenerationType.IDENTITY;
-
+import javax.persistence.GenerationType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -36,7 +35,7 @@ public class Car {
 	private int version;
 
 	@Id
-	@GeneratedValue(strategy = IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
 	public Long getId() {
 		return id;

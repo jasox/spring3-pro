@@ -1604,3 +1604,15 @@ Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown da
 14-06-26 21:07:14,553 [main] Starting read of logfile C:\JS\Java\Spring3-Pro\ch13\.\tmlog22.log
 14-06-26 21:07:14,602 [main] Done read of logfile
 14-06-26 21:07:14,603 [main] Logfile closed: C:\JS\Java\Spring3-Pro\ch13\.\tmlog22.log
+14-07-12 18:54:54,954 [main] Starting read of logfile C:\JS\Java\Spring3-Pro\ch13\.\tmlog23.log
+14-07-12 18:54:55,112 [main] Done read of logfile
+14-07-12 18:54:55,112 [main] Logfile closed: C:\JS\Java\Spring3-Pro\ch13\.\tmlog23.log
+14-07-12 18:55:56,158 [main] Starting read of logfile C:\JS\Java\Spring3-Pro\ch13\.\tmlog24.log
+14-07-12 18:55:56,158 [main] Done read of logfile
+14-07-12 18:55:56,159 [main] Logfile closed: C:\JS\Java\Spring3-Pro\ch13\.\tmlog24.log
+14-07-12 19:06:38,346 [main] Starting read of logfile C:\JS\Java\Spring3-Pro\ch13\.\tmlog25.log
+14-07-12 19:06:38,406 [main] Done read of logfile
+14-07-12 19:06:38,407 [main] Logfile closed: C:\JS\Java\Spring3-Pro\ch13\.\tmlog25.log
+14-07-12 19:07:44,657 [main] Starting read of logfile C:\JS\Java\Spring3-Pro\ch13\.\tmlog26.log
+14-07-12 19:07:44,658 [main] Done read of logfile
+14-07-12 19:07:44,658 [main] Logfile closed: C:\JS\Java\Spring3-Pro\ch13\.\tmlog26.log

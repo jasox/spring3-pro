@@ -40,6 +40,8 @@ MANIFEST.MF
 *.ldb
 *.bak
 *.lck
+*.out
+*.epoch
 
 #---------------------------------------
 # Compiled source #
