@@ -11,17 +11,20 @@
 		http://www.springframework.org/schema/tx      http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
-	<jdbc:embedded-database id="dataSource" type="H2">
+	<jdbc:embedded-database id="dataSourceH2" type="H2">
         <jdbc:script location="classpath:schema.sql"/>
         <jdbc:script location="classpath:test-data.sql"/>
     </jdbc:embedded-database> 
+    
+    <!-- MySQL localhost datasource -->
+    <import resource="datasource-dbcp.xml"/>  
     
 	<tx:annotation-driven/>
 
 	<context:component-scan base-package="com.apress.prospring3.ch9" />
 
     <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
-        <property name="dataSource" ref="dataSource"/>
+        <property name="dataSource" ref="dataSourceH2"/>
         <property name="packagesToScan" value="com.apress.prospring3.ch9.domain"/>
         <property name="hibernateProperties">
             <props>
