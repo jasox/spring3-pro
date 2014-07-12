@@ -21,7 +21,7 @@ public class JdbcContactSfDaoSample {
 		
 		ContactSfDao contactSfDao = ctx.getBean("contactSfDao", ContactSfDao.class);
 
-		System.out.println(contactSfDao.getFirstNameById(1l));
+		System.out.println(contactSfDao.getFirstNameById(10L));
 	}
 
 }

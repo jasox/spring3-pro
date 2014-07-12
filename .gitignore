@@ -39,6 +39,7 @@ MANIFEST.MF
 *.log.*
 *.ldb
 *.bak
+*.lck
 
 #---------------------------------------
 # Compiled source #

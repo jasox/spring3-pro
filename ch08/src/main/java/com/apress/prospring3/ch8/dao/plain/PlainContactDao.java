@@ -36,7 +36,7 @@ public class PlainContactDao implements ContactDao {
 	 * @throws SQLException if the connection cannot be established
 	 */
 	private Connection getConnection() throws SQLException {
-		return DriverManager.getConnection("jdbc:mysql://localhost:3306/prospring3_ch8", "prospring3", "prospring3");
+		return DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "jasox", "jasox");
 	}
 	
 	/**
