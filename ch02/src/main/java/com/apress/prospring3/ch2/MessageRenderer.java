@@ -12,6 +12,7 @@ public interface MessageRenderer {
 	public void render();	
 	
 	public MessageProvider getMessageProvider();	
+	
 	public void setMessageProvider(MessageProvider provider);
 	
 }

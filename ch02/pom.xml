@@ -13,8 +13,8 @@
 	<url>http://www.springframework.org</url>
 	<description>
 		<![CDATA[
-      This project is a minimal jar utility with Spring configuration.
-    ]]>
+            This project is a minimal jar utility with Spring configuration.
+        ]]>
 	</description>
     
 	<properties>

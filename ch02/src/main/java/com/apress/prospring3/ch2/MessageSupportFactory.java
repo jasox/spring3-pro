@@ -30,6 +30,7 @@ public class MessageSupportFactory {
 
             renderer = (MessageRenderer) Class.forName(rendererClass).newInstance();
             provider = (MessageProvider) Class.forName(providerClass).newInstance();
+            
         } catch (Exception ex) {
             ex.printStackTrace();
         }
