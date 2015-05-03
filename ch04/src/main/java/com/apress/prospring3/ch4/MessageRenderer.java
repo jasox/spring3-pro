@@ -11,8 +11,13 @@ public interface MessageRenderer {
 
 	public void render();
 	
-	public void setMessageProvider(MessageProvider provider);
+	/* However, you don’t need to define setter method in	the business interface. Instead, you can define the method 
+	 * in the classes implementing the business	interface. While programming in this way, all recent IoC containers, 
+	 * Spring included, can work with the	component in terms of the business interface but still provide the dependencies 
+	 * of the implementing class */
 	
-	public MessageProvider getMessageProvider();
+	//public void setMessageProvider(MessageProvider provider);
+	
+	//public MessageProvider getMessageProvider();
 	
 }

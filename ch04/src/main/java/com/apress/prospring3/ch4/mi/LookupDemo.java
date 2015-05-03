@@ -12,17 +12,17 @@ import org.springframework.util.StopWatch;
  */
 public class LookupDemo {
 
-	public static void main(String[] args) {
-		
-		GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
-		ctx.load("classpath:lookup.xml");
-
+  	public static void main(String[] args) {
+  		
+    		GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
+    		ctx.load("classpath:lookup.xml");
+    
         DemoBean abstractBean = (DemoBean) ctx.getBean("abstractLookupBean");
         DemoBean standardBean = (DemoBean) ctx.getBean("standardLookupBean");
-
+  
         displayInfo(standardBean);
         displayInfo(abstractBean);
-	}
+  	}
 	
     public static void displayInfo(DemoBean bean) {
         MyHelper helper1 = bean.getMyHelper();

@@ -10,8 +10,7 @@ import com.apress.prospring3.ch4.MessageProvider;
 import com.apress.prospring3.ch4.MessageRenderer;
 
 /**
- * @author Clarence
- *
+ * @author Clarence *
  */
 @Service("messageRenderer")
 public class StandardOutMessageRenderer implements MessageRenderer {

@@ -18,7 +18,9 @@ public class CollectionInjection {
 
   private Map<String, Object> map;
   private Properties props;
+  @SuppressWarnings("rawtypes") 
   private Set set;
+  @SuppressWarnings("rawtypes") 
   private List list;
   
 
