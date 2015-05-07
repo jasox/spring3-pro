@@ -16,7 +16,7 @@ public class ResourceDemo {
         ApplicationContext ctx = new ClassPathXmlApplicationContext(
         "classpath:events/events.xml");
   
-        Resource res1 = ctx.getResource("file:///d:/temp/test.txt");
+        Resource res1 = ctx.getResource("file:///c:/temp/test.txt");
         displayInfo(res1);
         Resource res2 = ctx.getResource("classpath:test.txt");
         displayInfo(res2);

@@ -9,8 +9,10 @@ import org.springframework.context.ApplicationEvent;
  * @author clarence
  */
 public class MessageEvent extends ApplicationEvent {
-
-    private String msg;
+  
+    private static final long serialVersionUID = 1L;
+  
+    private String msg;    
     
     public MessageEvent(Object source, String msg) {
         super(source);

@@ -36,4 +36,5 @@ public class MessageDigester {
     byte[] out   = digest.digest(bytes);
     System.out.println(out);
   }
+  
 }

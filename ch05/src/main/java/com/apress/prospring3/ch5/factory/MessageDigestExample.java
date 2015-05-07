@@ -17,6 +17,6 @@ public class MessageDigestExample {
 
     MessageDigester digester = (MessageDigester) ctx.getBean("digester");
     digester.digest("Hello World!");
-
   }
+  
 }

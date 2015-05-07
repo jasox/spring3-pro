@@ -18,7 +18,7 @@ import org.springframework.core.env.MutablePropertySources;
 public class EnvironmentSample {
 
 	public static void main(String[] args) {
-
+	  
 		GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
 		ctx.refresh();
 		

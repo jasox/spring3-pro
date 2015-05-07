@@ -27,4 +27,5 @@ public class MessageSourceDemo {
     System.out.println(ctx.getMessage("nameMsg", new Object[] { "Clarence", "Ho" }, englishLocale));
     System.out.println(ctx.getMessage("nameMsg", new Object[] { "Clarence", "Ho" }, czechLocale));
   }
+  
 }

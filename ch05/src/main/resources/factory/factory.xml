@@ -28,4 +28,5 @@
             <ref local="defaultDigest"/>
         </property>
     </bean>
+    
 </beans>

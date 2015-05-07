@@ -18,21 +18,19 @@ import javax.inject.Singleton;
  * 
  * @author Clarence
  */
-@Named("messageRenderer")
 @Singleton
+@Named("messageRenderer")
 public class StandardOutMessageRenderer implements MessageRenderer {
 
-  @Inject
+  @Inject  // setter injection 
   @Named("messageProvider")
-  private MessageProvider messageProvider = null;
-  
+  private MessageProvider messageProvider = null;  
 
+  @Override
   public void render() {
     if (messageProvider == null) {
-      throw new RuntimeException("You must set the property messageProvider of class:"
-          + StandardOutMessageRenderer.class.getName());
+      throw new IllegalArgumentException("You must set the property messageProvider of class:" + StandardOutMessageRenderer.class.getName());
     }
-
     System.out.println(messageProvider.getMessage());
   }
 

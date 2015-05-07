@@ -5,7 +5,6 @@ package com.apress.prospring3.ch5.profile;
 
 /**
  * @author Clarence
- *
  */
 public class Food {
 
@@ -25,4 +24,5 @@ public class Food {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
 }

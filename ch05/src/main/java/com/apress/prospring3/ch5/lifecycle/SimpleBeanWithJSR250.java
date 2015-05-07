@@ -35,8 +35,7 @@ public class SimpleBeanWithJSR250 implements InitializingBean {
 
   public void afterPropertiesSet() throws Exception {
     System.out.println("afterPropertiesSet");
-  }
-  
+  }  
 
   @PostConstruct
   public void init() throws Exception {
@@ -48,8 +47,7 @@ public class SimpleBeanWithJSR250 implements InitializingBean {
     }
 
     if (age == Integer.MIN_VALUE) {
-      throw new IllegalArgumentException(
-          "You must set the age property of any beans of type " + SimpleBean.class);
+      throw new IllegalArgumentException("You must set the age property of any beans of type " + SimpleBean.class);
     }
   }
 

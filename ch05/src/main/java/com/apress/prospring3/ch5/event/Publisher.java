@@ -17,8 +17,7 @@ public class Publisher implements ApplicationContextAware {
 
     public static void main(String[] args) {
     	   	
-        ApplicationContext ctx = new ClassPathXmlApplicationContext(
-                "classpath:events/events.xml");
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("classpath:events/events.xml");
 
         Publisher pub = (Publisher) ctx.getBean("publisher");
         pub.publish("Hello World!");
@@ -34,4 +33,5 @@ public class Publisher implements ApplicationContextAware {
     public void publish(String message) {
         ctx.publishEvent(new MessageEvent(this, message));
     }
+    
 }

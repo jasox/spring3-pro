@@ -48,7 +48,7 @@ public class ConfigurableMessageProvider implements MessageProvider {
 	}	
 	
 	@Inject  // constructor injection
-	@Named("message")
+	@Named("message1")
 	public ConfigurableMessageProvider(String message) {
 		this.message = message;
 	}	
@@ -57,6 +57,7 @@ public class ConfigurableMessageProvider implements MessageProvider {
 		this.message = message;
 	}
 
+	@Override
 	public String getMessage() {
 		return message;
 	}	
