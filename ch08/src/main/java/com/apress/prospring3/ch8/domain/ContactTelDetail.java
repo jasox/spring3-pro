@@ -10,8 +10,10 @@ import java.io.Serializable;
  *
  */
 public class ContactTelDetail implements Serializable {
+	
+  private static final long serialVersionUID = 1L;
 
-	private Long id;
+  private Long id;
 	
 	private Long contactId;
 	
@@ -55,4 +57,5 @@ public class ContactTelDetail implements Serializable {
 		return "Contact Tel Detail - Id: " + id + ", Contact id: " + contactId
 				+ ", Type: " + telType + ", Number: " + telNumber;
 	}
+	
 }

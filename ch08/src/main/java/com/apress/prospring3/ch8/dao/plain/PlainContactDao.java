@@ -107,7 +107,7 @@ public class PlainContactDao implements ContactDao {
 	}
 
 	public void update(Contact contact) {
-		
+	  // Not implemented	
 	}
 
 	public void delete(Long contactId) {
