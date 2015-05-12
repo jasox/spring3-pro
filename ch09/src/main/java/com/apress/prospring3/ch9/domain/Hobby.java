@@ -17,13 +17,15 @@ import javax.persistence.Table;
 
 /**
  * @author Clarence
- *
  */
 @Entity
 @Table(name = "hobby")
 public class Hobby implements Serializable {
 
-	private String hobbyId;
+  private static final long serialVersionUID = 1L;
+  
+  private String hobbyId;
+  
 	private Set<Contact> contacts = new HashSet<Contact>();
 
 	public Hobby() {
@@ -63,4 +65,6 @@ public class Hobby implements Serializable {
 	public String toString() {
 		return "Hobby :" + getHobbyId();
 	}
+	
 }
+

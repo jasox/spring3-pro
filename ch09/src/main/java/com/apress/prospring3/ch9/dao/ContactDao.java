@@ -26,4 +26,5 @@ public interface ContactDao {
 	
 	// Delete a contact
 	public void delete(Contact contact);
+	
 }

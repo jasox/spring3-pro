@@ -40,13 +40,21 @@ import javax.persistence.Version;
     query="select distinct c from Contact c left join fetch c.contactTelDetails t left join fetch c.hobbies h")
 })
 public class Contact implements Serializable {
-
-	private Long id;
+	
+  private static final long serialVersionUID = 1L;  
+  
+  private Long id;
+  
 	private int version;
+	
 	private String firstName;
+	
 	private String lastName;
+	
 	private Date birthDate;
+	
 	private Set<Hobby> hobbies = new HashSet<Hobby>();
+	
 	private Set<ContactTelDetail> contactTelDetails = new HashSet<ContactTelDetail>();
 
 	public Contact() {
@@ -171,8 +179,7 @@ public class Contact implements Serializable {
 	}	
 	
 	public String toString() {		
-		return "Contact - Id: " + id + ", First name: " + firstName 
-				+ ", Last name: " + lastName + ", Birthday: " + birthDate;
+		return "Contact - Id: " + id + ", First name: " + firstName + ", Last name: " + lastName + ", Birthday: " + birthDate;
 	}	
 
 }
