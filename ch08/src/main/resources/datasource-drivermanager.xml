@@ -6,8 +6,7 @@
       http://www.springframework.org/schema/context 
       http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
-    <bean id="dataSource"
-        class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName">
             <value>${jdbc.driverClassName}</value>
         </property>
