@@ -25,6 +25,7 @@ public class ContactSummaryUntypeImpl {
   @PersistenceContext
   private EntityManager em;
 
+  @SuppressWarnings("rawtypes")
   @Transactional(readOnly = true)
   public void displayAllContactSummary() {
 

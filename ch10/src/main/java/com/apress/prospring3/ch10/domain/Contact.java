@@ -46,9 +46,10 @@ import javax.persistence.Version;
 		name="contactResult",
 		entities=@EntityResult(entityClass=Contact.class)
 )
-public class Contact implements Serializable {
-
-	private Long id;
+public class Contact implements Serializable {	
+  private static final long serialVersionUID = 1L;
+  
+  private Long id;
 	private int version;
 	private String firstName;
 	private String lastName;
