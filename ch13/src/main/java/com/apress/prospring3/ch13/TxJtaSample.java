@@ -24,7 +24,7 @@ public class TxJtaSample {
 
 		Contact contact = new Contact();
 		contact.setFirstName("Jta");
-		contact.setLastName("Manager-1");  // !change number after each run
+		contact.setLastName("Manager-3");  // !change number after each run
 		contactService.save(contact);
 		System.out.println("Contact saved successfully");		
 		

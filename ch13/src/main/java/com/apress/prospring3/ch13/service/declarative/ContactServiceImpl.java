@@ -25,18 +25,22 @@ public class ContactServiceImpl implements ContactService {
 	@Autowired
 	private ContactRepository contactRepository;	
 	
+	@Override
 	public List<Contact> findAll() {
 		return Lists.newArrayList(contactRepository.findAll());
 	}
 
+	@Override
 	public Contact findById(Long id) {
 		return contactRepository.findOne(id);
 	}
 
+	@Override
 	public Contact save(Contact contact) {
 		return contactRepository.save(contact);
 	}
 
+	@Override
 	public long countAll() {
 		return contactRepository.countAllContacts();
 	}

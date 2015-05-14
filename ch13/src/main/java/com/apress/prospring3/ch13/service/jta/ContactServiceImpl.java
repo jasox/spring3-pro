@@ -32,17 +32,19 @@ public class ContactServiceImpl implements ContactService {
 	@PersistenceContext(unitName="emfB")
 	private EntityManager emB;	
 	
-	
+	@Override
 	@Transactional(readOnly=true)
 	public List<Contact> findAll() {	  
 		return null;
 	}
 
+	@Override
 	@Transactional(readOnly=true)
 	public Contact findById(Long id) {	 
 		return null;
 	}
 
+	@Override
 	public Contact save(Contact contact) {
 		Contact contactB = new Contact();
 		contactB.setFirstName(contact.getFirstName());
@@ -50,7 +52,7 @@ public class ContactServiceImpl implements ContactService {
 		if (contact.getId() == null) {
 			emA.persist(contact);
 			emB.persist(contactB);
-			// throw new JpaSystemException(new PersistenceException());
+			  throw new JpaSystemException(new PersistenceException());
 		} 
 		else {
 			emA.merge(contact);
@@ -59,6 +61,7 @@ public class ContactServiceImpl implements ContactService {
 		return contact;
 	}
 
+	@Override
 	public long countAll() {	  
 		return 0;
 	}

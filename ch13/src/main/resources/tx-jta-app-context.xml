@@ -53,7 +53,7 @@
         </property>
     </bean>    
 
-    <!-- Construct Atomikos UserTransactionManager, needed to configure Spring -->
+    <!-- Construct Atomikos TransactionManager, needed to configure Spring -->
     <bean id="atomikosTransactionManager" 
         class="com.atomikos.icatch.jta.UserTransactionManager" init-method="init" destroy-method="close">
         <!--  when close is called, should we force transactions to terminate or not? -->
