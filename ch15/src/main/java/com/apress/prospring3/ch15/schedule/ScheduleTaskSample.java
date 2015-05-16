@@ -17,9 +17,9 @@ public class ScheduleTaskSample {
 		ctx.load("classpath:task-namespace-app-context.xml");
 		ctx.refresh();
 		
-		while (true) {
-			
+		while (true) {			
 		}
+		
 	}
 
 }

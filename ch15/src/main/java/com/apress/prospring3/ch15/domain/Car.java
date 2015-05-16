@@ -92,8 +92,7 @@ public class Car {
 	}
 	
 	public String toString() {
-		return "License: " + licensePlate + " - Manufacturer: " + manufacturer
-				+ " - Manufacture Date: " + manufactureDate + " - Age: " + age;
+		return "License: " + licensePlate + " - Manufacturer: " + manufacturer + " - Manufacture Date: " + manufactureDate + " - Age: " + age;
 	}
 	
 }

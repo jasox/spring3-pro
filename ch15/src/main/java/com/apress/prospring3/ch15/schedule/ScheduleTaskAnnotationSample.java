@@ -19,6 +19,7 @@ public class ScheduleTaskAnnotationSample {
 		
 		while (true) {			
 		}
+		
 	}
 
 }
