@@ -12,7 +12,9 @@ import java.util.List;
  */
 public class Contacts implements Serializable {
 
-	private List<Contact> contacts;
+  private static final long serialVersionUID = 1L;
+  
+  private List<Contact> contacts;
 
 	public Contacts() {
 	}

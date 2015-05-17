@@ -22,8 +22,10 @@ public class SimpleMessageSender implements MessageSender {
 	@Autowired
 	private JmsTemplate jmsTemplate;	
 	
+	@Override
 	public void sendMessage(final String message) {
 		this.jmsTemplate.send(new MessageCreator() {
+		  @Override
 			public Message createMessage(Session session) throws JMSException {
 				return session.createTextMessage(message);
 			}

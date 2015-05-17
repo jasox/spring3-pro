@@ -27,25 +27,30 @@ public class ContactServiceImpl implements ContactService {
 	@Autowired
 	private ContactRepository contactRepository;
 	
+	@Override
 	@Transactional(readOnly=true)
 	public List<Contact> findAll() {
 		return Lists.newArrayList(contactRepository.findAll());
 	}
 
+	@Override
 	@Transactional(readOnly=true)
 	public List<Contact> findByFirstName(String firstName) {
 		return contactRepository.findByFirstName(firstName);
 	}
 
+	@Override
 	@Transactional(readOnly=true)	
 	public Contact findById(Long id) {
 		return contactRepository.findOne(id);
 	}
 
+	@Override
 	public Contact save(Contact contact) {
 		return contactRepository.save(contact);
 	}
 
+	@Override
 	public void delete(Contact contact) {
 		contactRepository.delete(contact);
 	}

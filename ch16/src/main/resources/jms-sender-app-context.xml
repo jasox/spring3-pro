@@ -12,7 +12,7 @@
     <context:annotation-config/>
 
     <bean id="connectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory"
-        p:brokerURL="tcp://localhost:61616" />
+          p:brokerURL="tcp://localhost:61616" />
 
     <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
         <constructor-arg name="connectionFactory" ref="connectionFactory"/>

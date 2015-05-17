@@ -26,8 +26,10 @@ import org.joda.time.DateTime;
 @Entity
 @Table(name = "contact")
 public class Contact implements Serializable {
-
-	private Long id;
+	
+  private static final long serialVersionUID = 1L;
+  
+  private Long id;
 	private int version;
 	private String firstName;
 	private String lastName;

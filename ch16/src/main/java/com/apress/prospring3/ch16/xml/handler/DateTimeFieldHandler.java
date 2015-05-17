@@ -51,8 +51,7 @@ public class DateTimeFieldHandler extends GeneralizedFieldHandler {
 			dateTimeString = dateTimeFormatter.print(dateTime);
 		}
 		
-		return dateTimeString;
-		
+		return dateTimeString;		
 	}
 	
 	protected static DateTime parse(final String dateTimeString) {
@@ -64,8 +63,7 @@ public class DateTimeFieldHandler extends GeneralizedFieldHandler {
 			dateTime = dateTimeFormatter.parseDateTime(dateTimeString);
 		}
 			
-		return dateTime;
-		
+		return dateTime;		
 	}
 
 }
