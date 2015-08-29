@@ -39,4 +39,5 @@ public interface ContactService {
 	
 	// Find contacts by first name and last name
 	public List<Contact> findByFirstNameAndLastName(String firstName, String lastName);	
+	
 }
