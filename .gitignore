@@ -6,6 +6,7 @@
 
 .settings
 .svn
+.idea
 target
 test-output
 tmp
@@ -26,11 +27,12 @@ dist
 .project
 .classpath
 manifest
-#/nb-configuration.xml
-#/nbactions.xml
+nb-configuration.xml
+nbactions.xml
 MANIFEST.MF
 .faces-config.xml.faceside
 .faces-config.xml.jsfdia
+*.iml
 
 # pliki w każdym katalogu
 
