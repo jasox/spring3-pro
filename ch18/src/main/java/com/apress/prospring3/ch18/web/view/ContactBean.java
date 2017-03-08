@@ -13,9 +13,10 @@ import com.apress.prospring3.ch18.domain.Hobby;
  * @author Clarence
  *
  */
-public class ContactBean implements Serializable {
-	
-	private Contact contact;	
+public class ContactBean implements Serializable {	
+    private static final long serialVersionUID = 1L;
+    
+    private Contact contact;	
 	private DualListModel<Hobby> hobbies;
 	
 

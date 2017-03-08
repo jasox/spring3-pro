@@ -17,7 +17,7 @@
         <org.springsecurity-version>3.1.0.RELEASE</org.springsecurity-version>
 		<org.aspectj-version>1.6.9</org.aspectj-version>
 		<org.slf4j-version>1.5.10</org.slf4j-version>
-	 <netbeans.hint.deploy.server>gfv3ee6</netbeans.hint.deploy.server>
+	    <netbeans.hint.deploy.server>gfv3ee6</netbeans.hint.deploy.server>
 	</properties>
     
 	<dependencies>
@@ -245,6 +245,7 @@
         </dependency>                                        
                 
 	</dependencies>
+    
 	<build>
 		<plugins>
 			<plugin>

@@ -32,8 +32,9 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
 @Entity
 @Table(name = "contact")
 public class Contact implements Serializable {
-
-	private Long id;
+	private static final long serialVersionUID = 1L;
+	
+    private Long id;
 	private int version;
 	private String firstName;
 	private String lastName;
@@ -118,8 +119,9 @@ public class Contact implements Serializable {
 	@Transient
 	public String getBirthDateString() {
 		String birthDateString = "";
-		if (birthDate != null)
+		if (birthDate != null) {
 			birthDateString = org.joda.time.format.DateTimeFormat.forPattern("yyyy-MM-dd").print(birthDate);
+		}
 	    return birthDateString;
 	}	
 	

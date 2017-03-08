@@ -42,8 +42,7 @@
     
     <view-state id="show" view="show.xhtml">
         <on-entry>
-            <evaluate expression="contactController.showContact(flowRequestContext)"
-                result="viewScope.contact"/>
+            <evaluate expression="contactController.showContact(flowRequestContext)" result="viewScope.contact"/>
         </on-entry>
         <transition on ="back" to="start"/>      
     </view-state>       

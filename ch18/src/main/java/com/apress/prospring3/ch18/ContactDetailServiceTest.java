@@ -11,7 +11,6 @@ import com.apress.prospring3.ch18.service.ContactService;
 
 /**
  * @author Clarence
- *
  */
 public class ContactDetailServiceTest {
 

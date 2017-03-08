@@ -22,7 +22,7 @@ public class ContactServiceTest {
 	public static void main(String[] args) {
 
 		GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
-		ctx.load("classpath:jpa-app-context.xml");
+		ctx.load("classpath:/jpa-app-context.xml");
 		ctx.refresh();
 		
 		System.out.println("App context initialized successfully");
