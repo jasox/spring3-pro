@@ -36,8 +36,7 @@ public class MethodReplacementExample {
 
     stopWatch.stop();
 
-    System.out.println("1000000 invocations took: "
-        + stopWatch.getTotalTimeMillis() + " ms");
+    System.out.println("1000000 invocations took: " + stopWatch.getTotalTimeMillis() + " ms");
   }
   
 }

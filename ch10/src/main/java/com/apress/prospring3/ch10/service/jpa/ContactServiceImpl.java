@@ -25,86 +25,85 @@ import com.apress.prospring3.ch10.domain.Contact;
 import com.apress.prospring3.ch10.service.ContactService;
 
 /**
- * The @Service annotation is to identify that it’s a Spring component that provides business services to
+ * The @Service annotation is to identify that it's a Spring component that provides business services to
  * another layer and assigns the Spring bean the name "jpaContactService". <br/>
- * The @Repository annotation indicates that the class contains data access logic and instructs Spring 
- * to translate the vendor-specific exceptions to Spring’s <b>DataAccessException</b> hierarchy. Actually, 
- * you can use @Repository("jpaContactService") and get rid of the @Service annotation; the effect is the same. <br/> 
- * Here we just use the @Service annotation to indicate it belongs to the service layer (like @Controller 
- * indicates the component is in the web layer) because it is more developer-friendly. 
+ * The @Repository annotation indicates that the class contains data access logic and instructs Spring
+ * to translate the vendor-specific exceptions to Spring's <b>DataAccessException</b> hierarchy. Actually,
+ * you can use @Repository("jpaContactService") and get rid of the @Service annotation; the effect is the same. <br/>
+ * Here we just use the @Service annotation to indicate it belongs to the service layer (like @Controller
+ * indicates the component is in the web layer) because it is more developer-friendly. <br/>
  * As you will be already familiar, the @Transactional annotation is for defining transaction requirements.
- * 
+ *
  * @author Clarence
  */
 @Service("jpaContactService")
-@Repository  // indicate to translate the vendor-specific exceptions to Spring’s DataAccessException hierarchy
+@Repository  // indicate to translate the vendor-specific exceptions to Spring's DataAccessException hierarchy
 @Transactional
 public class ContactServiceImpl implements ContactService {
 
-	private Log log = LogFactory.getLog(ContactServiceImpl.class);	
-	
-	@PersistenceContext // (unitName="...")
-	private EntityManager em;
-	
-	@Transactional(readOnly=true)
-  @Override
-	public List<Contact> findAll() {
-		List<Contact> contacts = em.createNamedQuery("Contact.findAll", Contact.class).getResultList();
-		return contacts;
-	}
+  private Log log = LogFactory.getLog(ContactServiceImpl.class);
 
-	@Transactional(readOnly=true)
-  @Override
-	public List<Contact> findAllWithDetail() {
-		List<Contact> contacts = em.createNamedQuery("Contact.findAllWithDetail", Contact.class).getResultList();
-		return contacts;
-	}
+  @PersistenceContext // (unitName="...")
+  private EntityManager em;
 
-	@Transactional(readOnly=true)
+  @Transactional(readOnly = true)
   @Override
-	public Contact findById(Long id) {
-		TypedQuery<Contact> query = em.createNamedQuery("Contact.findByIdWithDetail", Contact.class);
-		query.setParameter("id", id);
-		return query.getSingleResult();
-	}
+  public List<Contact> findAll() {
+    List<Contact> contacts = em.createNamedQuery("Contact.findAll", Contact.class).getResultList();
+    return contacts;
+  }
 
+  @Transactional(readOnly = true)
   @Override
-	public Contact save(Contact contact) {
-		if (contact.getId() == null) { // Insert Contact
-			log.info("Inserting new contact");
-			em.persist(contact);
-		} 
-		else {                       // Update Contact
-			em.merge(contact);
-			log.info("Updating existing contact");
-		}
-		log.info("Contact saved with id: " + contact.getId());
-		return contact;
-	}
+  public List<Contact> findAllWithDetail() {
+    List<Contact> contacts = em.createNamedQuery("Contact.findAllWithDetail", Contact.class).getResultList();
+    return contacts;
+  }
+
+  @Transactional(readOnly = true)
+  @Override
+  public Contact findById(Long id) {
+    TypedQuery<Contact> query = em.createNamedQuery("Contact.findByIdWithDetail", Contact.class);
+    query.setParameter("id", id);
+    return query.getSingleResult();
+  }
 
   @Override
-	public void delete(Contact contact) {
-		Contact mergedContact = em.merge(contact);
-		em.remove(mergedContact);
-		log.info("Contact with id: " + contact.getId() + " deleted successfully");
-	}
-	
-	final static String ALL_CONTACT_NATIVE_QUERY =
-			"SELECT id, first_name, last_name, birth_date, version FROM contact";
+  public Contact save(Contact contact) {
+    if (contact.getId() == null) { // Insert Contact
+      log.info("Inserting new contact");
+      em.persist(contact);
+    } else {                       // Update Contact
+      em.merge(contact);
+      log.info("Updating existing contact");
+    }
+    log.info("Contact saved with id: " + contact.getId());
+    return contact;
+  }
 
-	@Transactional(readOnly=true)
   @Override
-	public List<Contact> findAllByNativeQuery() {
+  public void delete(Contact contact) {
+    Contact mergedContact = em.merge(contact);
+    em.remove(mergedContact);
+    log.info("Contact with id: " + contact.getId() + " deleted successfully");
+  }
 
-		//return em.createNativeQuery(ALL_CONTACT_NATIVE_QUERY, Contact.class).getResultList();
-		return em.createNativeQuery(ALL_CONTACT_NATIVE_QUERY, "contactResult").getResultList();
-	}
+  final static String ALL_CONTACT_NATIVE_QUERY =
+          "SELECT id, first_name, last_name, birth_date, version FROM contact";
 
-	@Transactional(readOnly=true)
+  @Transactional(readOnly = true)
   @Override
-	public List<Contact> findByCriteriaQuery(String firstName, String lastName) {
+  public List<Contact> findAllByNativeQuery() {
+
+    //return em.createNativeQuery(ALL_CONTACT_NATIVE_QUERY, Contact.class).getResultList();
+    return em.createNativeQuery(ALL_CONTACT_NATIVE_QUERY, "contactResult").getResultList();
+  }
+
+  @Transactional(readOnly = true)
+  @Override
+  public List<Contact> findByCriteriaQuery(String firstName, String lastName) {
     /*
-		log.info("Finding contact for firstName: " + firstName + " and lastName: " + lastName);
+    log.info("Finding contact for firstName: " + firstName + " and lastName: " + lastName);
 		
 		CriteriaBuilder cb = em.getCriteriaBuilder();
 		CriteriaQuery<Contact> criteriaQuery = cb.createQuery(Contact.class);
@@ -132,19 +131,19 @@ public class ContactServiceImpl implements ContactService {
 		List<Contact> result = em.createQuery(criteriaQuery).getResultList();
 		return result;
 		*/
-	  return null; // Compilation errors with Contact_
-	}
+    return null; // Compilation errors with Contact_
+  }
 
   @Override
-	public List<Contact> findByFirstName(String firstName) {
-		// Not implemented
-		return null;
-	}
+  public List<Contact> findByFirstName(String firstName) {
+    // Not implemented
+    return null;
+  }
 
   @Override
-	public List<Contact> findByFirstNameAndLastName(String firstName,	String lastName) {
-		// Not implemented
-		return null;
-	}	
-	
+  public List<Contact> findByFirstNameAndLastName(String firstName, String lastName) {
+    // Not implemented
+    return null;
+  }
+
 }

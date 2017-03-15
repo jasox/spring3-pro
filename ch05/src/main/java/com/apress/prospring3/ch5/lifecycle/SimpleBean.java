@@ -8,17 +8,19 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
 /**
- * @author clarence
+ * @author Clarence
  */
 public class SimpleBean {
 
   private static final String DEFAULT_NAME = "Luke Skywalker";
-  
+
+  // Fields
   private String name = null;
   private int    age  = Integer.MIN_VALUE;
   
   //----------------------------------------------------------------------------
-  
+  // Properties
+
   public void setName(String name) {
     this.name = name;
   }
@@ -38,8 +40,7 @@ public class SimpleBean {
     }
 
     if (age == Integer.MIN_VALUE) {
-      throw new IllegalArgumentException(
-          "You must set the age property of any beans of type " + SimpleBean.class);
+      throw new IllegalArgumentException("You must set the age property of any beans of type " + SimpleBean.class);
     }
   }
 

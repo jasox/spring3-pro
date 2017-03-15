@@ -51,7 +51,6 @@ public class AppConfig {
 	@DependsOn(value="messageProvider")  // XML: <bean ... depends-on="messageProvider"/>
 	public MessageRenderer messageRenderer() {
 		MessageRenderer renderer = new StandardOutMessageRenderer();
-		
 		// Setter injection
 		renderer.setMessageProvider(messageProvider());
 		

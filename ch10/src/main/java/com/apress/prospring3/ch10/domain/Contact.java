@@ -36,11 +36,11 @@ import javax.persistence.Version;
 @Table(name = "contact")
 @NamedQueries({
 	@NamedQuery(name="Contact.findAll",
-	  query="select c from Contact c"), 
+	            query="select c from Contact c"),
 	@NamedQuery(name="Contact.findByIdWithDetail", 
-	  query="select distinct c from Contact c left join fetch c.contactTelDetails t left join fetch c.hobbies h where c.id = :id"),
+	            query="select distinct c from Contact c left join fetch c.contactTelDetails t left join fetch c.hobbies h where c.id = :id"),
 	@NamedQuery(name="Contact.findAllWithDetail", 
-    query="select distinct c from Contact c left join fetch c.contactTelDetails t left join fetch c.hobbies h")
+              query="select distinct c from Contact c left join fetch c.contactTelDetails t left join fetch c.hobbies h")
 })
 @SqlResultSetMapping(
 		name="contactResult",
@@ -124,13 +124,13 @@ public class Contact implements Serializable {
 	}
 
   /* For associations, the JPA specification states that, by default, the persistence providers must fetch the
-   * association eagerly. However, for Hibernate’s JPA implementation, the default fetching strategy is still
-   * lazy. So, when using Hibernate’s JPA implementation, you don’t need to explicitly define an association
-   * as lazy fetching. The default fetching strategy of Hibernate is different from the JPA specification.  */
+   * association eagerly. However, for Hibernate's JPA implementation, the default fetching strategy is still lazy.
+   * So, when using Hibernate's JPA implementation, you don't need to explicitly define an association
+   * as lazy fetching. The default fetching strategy of Hibernate is different from the JPA specification. */
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(name = "contact_hobby_detail", 
-	      joinColumns = @JoinColumn(name = "CONTACT_ID"), 
-	      inverseJoinColumns = @JoinColumn(name = "HOBBY_ID"))
+	           joinColumns = @JoinColumn(name = "CONTACT_ID"),
+	           inverseJoinColumns = @JoinColumn(name = "HOBBY_ID"))
 	public Set<Hobby> getHobbies() {
 		return this.hobbies;
 	}
@@ -140,8 +140,8 @@ public class Contact implements Serializable {
 	}
   
   /* orphanRemoval
-   * has nothing to do with ON DELETE CASCADE. orphanRemoval is an entirely ORM-specific thing. It marks 
-   * "child" entity to be removed when it's no longer referenced from the "parent" entity, e.g. when
+   * has nothing to do with ON DELETE CASCADE. orphanRemoval is an entirely ORM-specific thing.
+   * It marks "child" entity to be removed when it's no longer referenced from the "parent" entity, e.g. when
    * you remove the child entity from the corresponding collection of the parent entity. ON DELETE CASCADE is
    * a database-specific thing, it deletes the "child" row in the database when the "parent" row is deleted.
    * The equivalent JPA mapping for the DDL ON DELETE CASCADE is cascade=CascadeType.REMOVE. Orphan removal
@@ -149,7 +149,7 @@ public class Contact implements Serializable {
    * For example if a child is removed from a @OneToMany relationship without explicitly removing it in the
    * entity manager. The morale is to set orphanRemoval to true so long as you are certain that children of
    * that parent will not migrate to a different parent throughout their existence. Turning on orphanRemoval
-   * also automatically adds REMOVE to cascade list.  */
+   * also automatically adds REMOVE to cascade list. */
 	@OneToMany(mappedBy = "contact", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
 	public Set<ContactTelDetail> getContactTelDetails() {
 		return this.contactTelDetails;

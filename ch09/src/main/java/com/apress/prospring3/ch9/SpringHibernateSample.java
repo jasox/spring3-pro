@@ -32,7 +32,7 @@ public class SpringHibernateSample {
 		List<Contact> contacts = contactDao.findAll();
 		listContacts(contacts);
     /* Hibernate throw the org.hibernate.LazyInitializationException when you try to access the associations.
-     * It’s because, by default, Hibernate will fetch the associations “lazily”, which means that Hibernate
+     * It's because, by default, Hibernate will fetch the associations "lazily", which means that Hibernate
      * will not join the association tables (i.e., CONTACT_TEL_DETAIL) for records. The rationale behind this
      * is for performance consideration, since as you can imagine, if a query is retrieving thousands of
      * records and all the associations were retrieved, there will be a massive amount of data transfer. */

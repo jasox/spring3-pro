@@ -13,8 +13,7 @@ import org.springframework.core.io.Resource;
 public class ResourceDemo {
 
     public static void main(String[] args) throws Exception{
-        ApplicationContext ctx = new ClassPathXmlApplicationContext(
-        "classpath:events/events.xml");
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("classpath:events/events.xml");
   
         Resource res1 = ctx.getResource("file:///c:/temp/test.txt");
         displayInfo(res1);
